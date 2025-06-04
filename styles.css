@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Bobby Jones';
-    src: url('/fontes/Bobby\ Jones\ Soft.otf') format('otf');
+    src: url('/Bobby\ Jones\ Soft.otf') format('otf');
     font-weight: normal;
     font-style: normal;
 }
@@ -9,7 +9,7 @@ body {
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
-    background: url('imagens/homepage1.jpg') no-repeat center center fixed;
+    background: url('homepage1.jpg') no-repeat center center fixed;
     background-size: cover;
     position: relative;
     width: 100%;
@@ -265,7 +265,7 @@ footer a:hover {
     color: white;
     padding: 80px 10% 60px;
     text-align: justify;
-    background-image: url('imagens/sala1.jpg');
+    background-image: url('sala1.jpg');
     background-size: cover;        /* cobre toda a secção */
     background-position: center;   /* centraliza a imagem */
     background-repeat: no-repeat;  /* impede repetição */
@@ -414,7 +414,7 @@ footer i {
     margin-right: 6px;
 }
 .onde-encontrar {
-    background-image: url('imagens/sala1.jpg');
+    background-image: url('sala1.jpg');
     background-size: cover;        /* cobre toda a secção */
     background-position: center;   /* centraliza a imagem */
     background-repeat: no-repeat;  /* impede repetição */

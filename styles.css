@@ -1,3 +1,9 @@
+/* definição das fontes
+- Títulos: Bobby Jones, 3vh;
+- Subtítulos: Bobby Jones, 2vh;
+- Body: Assistant, 2vh;
+- Butões: Bobby Jones, 2vh; */
+
 @font-face {
     font-family: 'Bobby Jones';
     src: url('BobbyJonesSoft-Regular.woff2') format('woff2');
@@ -11,6 +17,15 @@
     font-weight: bold;
     font-style: normal;
 }
+
+
+
+
+
+
+
+
+
 
 body {
     font-family: 'Assistant';

@@ -404,6 +404,9 @@ header, .main-section {
     position: relative;
     z-index: 1;
 }
+
+/* KPIs */
+
 .kpis {
     display: flex;
     justify-content: center; /* Centraliza os KPIs */
@@ -445,8 +448,12 @@ header, .main-section {
 
 .kpi p {
     font-size: 3vh;
-    color: white;
+    font-family: 'Bobby Jones';
+    color: rgb(233, 2, 2);
 }
+
+
+
 .footer-socials {
     margin-top: 10px;
 }

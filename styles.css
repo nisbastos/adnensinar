@@ -136,7 +136,7 @@ nav a:hover {
 
 /* botão Como Chegar Até Nós */
 
-.botao-transporte button {
+/*.botao-transporte button {
     font-family: 'Bobby Jones';
     text-align: center;
     position: relative;
@@ -154,11 +154,32 @@ nav a:hover {
 }
 
 .botao-transporte button:hover {
-    background-color: #C1DBDC; /* Cor de fundo cinza no hover */
-    color: #ffffff; /* Cor das letras quando em hover */
+    background-color: #C1DBDC;
+    color: #ffffff;
+} */
+
+.botao-transporte {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
+.botao-transporte button {
+    font-family: 'Bobby Jones';
+    padding: 10px 20px;
+    background-color: #ff0084; /* azul */
+    color: #ffffff; /* branco */
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 2vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
+.botao-transporte button:hover {
+    background-color: #C1DBDC; /* cinzento */
+    color: #ffffff;
+}
 
 
 
@@ -536,29 +557,7 @@ footer i {
     font-size: 18px;
 }
 
-.botao-transporte {
-    display: flex;
-    
-    justify-content: center;
-    margin-top: 2rem;
-}
 
-.botao-transporte button {
-    font-family: 'Bobby Jones';
-    padding: 10px 20px;
-    background-color: #3056d3; /* azul */
-    color: #ffffff; /* branco */
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    font-size: 2vh;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.botao-transporte button:hover {
-    background-color: #C1DBDC; /* cinzento */
-    color: #ffffff;
-}
 
 .encontrar-conteudo {
     display: flex;

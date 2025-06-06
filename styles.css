@@ -348,38 +348,27 @@ footer a:hover {
 
 /* botão orçamento */
 
-/*.botao-orcamento {
-    font-family: 'Bobby Jones';
-    padding: 10px 20px;
-    background-color: #ffffff;
-    color: #565656;
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    font-size: 2vh;
+.botao-orcamento {
     text-align: center;
     position: relative;
     z-index: 5;
 }
-*/
+
 .botao-orcamento button {
-    font-family: 'Bobby Jones';
+    font-family: 'Bobby Jones', Arial;
     padding: 10px 20px;
     background-color: #ffffff;
     color: #565656;
     border: none;
     cursor: pointer;
     border-radius: 50px;
-    font-size: 2vh;
+    font-size: 18px;
 }
-    */
 
 .botao-orcamento button:hover {
     background-color: #C1DBDC;
-    color:#ffffff;
-    background-color: #C1DBDC;
     transition: all 0.3s ease-in-out;
-    color:#ffffff;
+    color:#ffffff
 }
 
 /* fim botão orçamento */

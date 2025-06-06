@@ -1,8 +1,10 @@
-/* definição das fontes
+/*
+definição das fontes:
 - Títulos: Bobby Jones, 3vh;
 - Subtítulos: Bobby Jones, 2vh;
 - Body: Assistant, 2vh;
-- Butões: Bobby Jones, 2vh; */
+- Butões: Bobby Jones, 2vh;
+*/
 
 @font-face {
     font-family: 'Bobby Jones';
@@ -18,20 +20,11 @@
     font-style: normal;
 }
 
-
-
-
-
-
-
-
-
+/*
+definição do background
+*/
 
 body {
-    font-family: 'Assistant';
-    margin: 0;
-    color:#00ff22;
-    padding: 0;
     background: url('homepage1.jpg') no-repeat center center fixed;
     background-size: cover;
     position: relative;
@@ -41,26 +34,23 @@ body {
 
 .background-overlay {
     position: fixed;
-    top: 0;
-    color:#3056d3;
-    left: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
     pointer-events: none;
 }
 
-
+/*
 h1, h2, h3, .inscricao button, header, nav a {
     font-family: 'Bobby Jones';
     color:#FBD1C1;
 }
-
+ */
 header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: rgba(0, 0, 0, 0.6); /* fundo escuro transparente */
+    background: rgba(0, 0, 0, 0.6);
     padding: 20px;
     width: 100%;
     color: rgb(255, 0, 195);

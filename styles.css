@@ -90,7 +90,9 @@ nav a:hover {
     align-items: center;
 }
 
-/* butão inscrições */
+/* ------------------- CONFIGURAÇÃO DE BOTÕES ------------------- */
+
+/* botão Inscrições */
 
 .inscricao button {
     font-family: 'Bobby Jones';
@@ -108,7 +110,57 @@ nav a:hover {
     color:#ffffff
 }
 
-/* fim botão inscrições */
+/* botão Pedir Orçamento */
+
+.botao-orcamento {
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.botao-orcamento button {
+    font-family: 'Bobby Jones';
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #565656;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 2vh;
+}
+
+.botao-orcamento button:hover {
+    background-color: #C1DBDC;
+    color:#ffffff
+}
+
+/* botão Como Chegar Até Nós */
+
+.botao-transporte button {
+    font-family: 'Bobby Jones';
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #565656;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 2vh;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.botao-transporte button:hover {
+    background-color: #C1DBDC; /* Cor de fundo cinza no hover */
+    color: #ffffff; /* Cor das letras quando em hover */
+}
+
+
+
+
 
 
 
@@ -346,31 +398,7 @@ footer a:hover {
     font-family: 'Assistant';
 }
 
-/* botão orçamento */
 
-.botao-orcamento {
-    text-align: center;
-    position: relative;
-    z-index: 5;
-}
-
-.botao-orcamento button {
-    font-family: 'Bobby Jones';
-    padding: 10px 20px;
-    background-color: #ffffff;
-    color: #565656;
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    font-size: 2vh;
-}
-
-.botao-orcamento button:hover {
-    background-color: #C1DBDC;
-    color:#ffffff
-}
-
-/* fim botão orçamento */
 
 header, .main-section {
     position: relative;
@@ -559,28 +587,7 @@ footer i {
     margin-bottom: 10px;
 }
 
-.botao-transporte button,
-.botao-mapa a {
-    font-family: 'Bobby Jones';
-    display: inline-block;
-    
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #ffffff; /* Fundo azul */
-    color: #565656; /* Letras brancas */
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    font-size: 2vh;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-.botao-transporte button:hover,
-.botao-mapa a:hover {
-    background-color: #C1DBDC; /* Cor de fundo cinza no hover */
-    color: #ffffff; /* Cor das letras quando em hover */
-}
 
 .secao-avaliacoes {
     background-color: #f9f9f9;

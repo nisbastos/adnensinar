@@ -621,7 +621,7 @@ footer a:hover {
     background-color: #C1DBDC; /* Azul */
     color: #565656;
     text-align: center;
-    font-size: 15px;
+    font-size: 2vh;
     padding: 10px;
     width: 100%;
     font-family: 'Assistant';
@@ -637,7 +637,7 @@ footer a:hover {
     text-align: center;
     top: 0.5px;
     right: 15px;
-    font-size: 30px;
+    font-size: 2vh;
     color: #565656;
     cursor: pointer;
     font-weight: bold;
@@ -659,7 +659,6 @@ footer a:hover {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     cursor: pointer;
     display: flex;
-    
     align-items: center;
     gap: 10px;
 }
@@ -667,7 +666,7 @@ footer a:hover {
 .bolinha-alerta .fechar {
     font-weight: bold;
     cursor: pointer;
-    font-size: 2.5vh;
+    font-size: 2vh;
     transform: scale (1.1);
 }
 

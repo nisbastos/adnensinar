@@ -185,8 +185,7 @@ footer a:hover {
     color: #565656;
     position: relative;
     z-index: 2;
-    font-size: 30px; /* Aumenta um pouco o tamanho */
-    font-weight: 300; /* Torna a fonte mais leve */
+    font-size: 3vh; /* Aumenta um pouco o tamanho */
     margin-top: 20px; /* Adiciona espaçamento acima */
 }
 
@@ -279,9 +278,8 @@ footer a:hover {
 }
 
 .titulo-principal {
-    font-size: 30px;
+    font-size: 3vh;
     margin-bottom: 10px;
-    font-weight: 300;
 }
 
 .subtitulo-servicos {
@@ -440,10 +438,9 @@ footer i {
 
 .onde-encontrar h2 {
     font-family: 'Bobby Jones';
-    font-size: 2vh;
+    font-size: 3vh;
     color: #ffffff;
     margin-bottom: 30px;
-    font-weight: 300;
 }
 
 .info-transporte {
@@ -667,8 +664,7 @@ z-index: 999;
 }
 
 .texto-animado h1 {
-  font-size: 30px;
-  font-weight: 300;
+  font-size: 3vh;
   color: #565656;
 }
 

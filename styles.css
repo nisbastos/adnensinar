@@ -395,7 +395,7 @@ header, .main-section {
     justify-content: center; /* Centraliza os KPIs */
     gap: 60px; /* Espaçamento entre as bolas */
     margin-top: 30px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .kpi {

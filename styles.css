@@ -395,23 +395,25 @@ header, .main-section {
     justify-content: center; /* Centraliza os KPIs */
     gap: 60px; /* Espaçamento entre as bolas */
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .kpi {
     text-align: center;
     font-family: 'Bobby Jones';
     width: 190px;
-    height: 190px;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
-    background-color: #C1DBDC; /* Cor de fundo */
+    background-color: #C1DBDC;
     color: white;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-    font-size: 2vh;
+    font-size: 1.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s ease, transform 0.3s ease;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .kpi:hover {
@@ -420,7 +422,7 @@ header, .main-section {
 }
 .kpi-numero {
     display: none; /* Esconde os números por padrão */
-    font-size: 3vh;
+    font-size: 1.5rem;
     color: #ffffff;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 }
@@ -430,7 +432,7 @@ header, .main-section {
 }
 
 .kpi p {
-    font-size: 3vh;
+    font-size: 1.5rem;
     font-family: 'Bobby Jones';
     color: rgb(255, 255, 255);
 }

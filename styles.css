@@ -90,6 +90,8 @@ nav a:hover {
     align-items: center;
 }
 
+/* butão inscrições */
+
 .inscricao button {
     font-family: 'Bobby Jones';
     padding: 10px 20px;
@@ -105,6 +107,13 @@ nav a:hover {
     background-color: #C1DBDC;
     color:#ffffff
 }
+
+/* fim botão inscrições */
+
+
+
+
+
 .main-section {
     position: relative;
     height: 400px;
@@ -337,13 +346,33 @@ footer a:hover {
     font-family: 'Assistant';
 }
 
-.botao-orcamento {
-    text-align: center;
-    position: relative;
-    z-index: 5;
+
+
+
+
+
+/* botão orçamento */
+
 }
 
-.botao-orcamento button {
+.inscricao button:hover {
+    
+
+.botao-orcamento {
+    font-family: 'Bobby Jones';
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #565656;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 2vh;
+    /*text-align: center;
+    position: relative;
+    z-index: 5;*/
+}
+
+/*.botao-orcamento button {
     font-family: 'Bobby Jones';
     padding: 10px 20px;
     background-color: #ffffff;
@@ -353,12 +382,17 @@ footer a:hover {
     border-radius: 50px;
     font-size: 2vh;
 }
-
+*/
 .botao-orcamento button:hover {
     background-color: #C1DBDC;
-    transition: all 0.3s ease-in-out;
     color:#ffffff
+    /*background-color: #C1DBDC;
+    transition: all 0.3s ease-in-out;
+    color:#ffffff*/
 }
+
+/* fim botão orçamento */
+
 header, .main-section {
     position: relative;
     z-index: 1;
@@ -481,10 +515,11 @@ footer i {
     margin-bottom: 1rem;
 }
 
+/* conteúdo do texto de onde estamos */
 .info-transporte p {
     margin-bottom: 20px;
     line-height: 1.6;
-    color: #ed0000;
+    color: #ffffff;
     font-size: 2vh;
     font-family: 'Assistant';
 }

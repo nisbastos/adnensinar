@@ -348,7 +348,7 @@ footer a:hover {
 
 /* botão orçamento */
 
-.botao-orcamento {
+/*.botao-orcamento {
     font-family: 'Bobby Jones';
     padding: 10px 20px;
     background-color: #ffffff;
@@ -361,8 +361,7 @@ footer a:hover {
     position: relative;
     z-index: 5;
 }
-
-/*
+*/
 .botao-orcamento button {
     font-family: 'Bobby Jones';
     padding: 10px 20px;

@@ -60,3 +60,16 @@ function fecharBolinha() {
     var bolinha = document.getElementById("bolinhaAlerta");
     bolinha.style.display = "none";
 }
+
+  window.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('popupAlerta').style.display = 'block';
+  });
+
+  function fecharPopup(event) {
+    event.stopPropagation(); // Evita que clique feche o popup E abra o link
+    document.getElementById('popupAlerta').style.display = 'none';
+  }
+
+  function abrirLink() {
+    window.open('https://teulink.com/oferta-inscricao', '_blank');
+  }

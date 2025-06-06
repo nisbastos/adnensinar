@@ -5,8 +5,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Assistant';
+    src: url('Assistant-ExtraLight.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Assistant';
     margin: 0;
     padding: 0;
     background: url('homepage1.jpg') no-repeat center center fixed;
@@ -14,9 +21,8 @@ body {
     position: relative;
     width: 100%;
     overflow-x: hidden;
-    font-family: 'Bobby Jones';
-
 }
+
 .background-overlay {
     position: fixed;
     top: 0;
@@ -443,7 +449,7 @@ footer i {
 .info-transporte {
     padding: 1.5rem 2rem;
     border-radius: 12px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Assistant';
     font-weight: 300;
     font-size: 18px;
     margin-top: 1rem;
@@ -506,7 +512,7 @@ footer i {
 .info-transporte ul {
     list-style: none;
     padding: 0;
-    font-family: 'Lato';
+    font-family: 'Assistant';
     font-weight: lighter;
     text-align: left;
     font-size: 18px;
@@ -553,7 +559,7 @@ footer i {
 }
 
 .subtitulo-avaliacoes {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Assistant';
     font-size: 18px;
     color: #777;
     margin-bottom: 40px;
@@ -577,7 +583,7 @@ footer i {
     font-size: 15px;
     padding: 10px;
     width: 100%;
-    font-family: 'Lato';
+    font-family: 'Assistant';
     font-weight: bold; /* Destaca as letras */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
     padding-bottom: 10px;

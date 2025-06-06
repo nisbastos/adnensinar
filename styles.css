@@ -215,7 +215,8 @@ footer a:hover {
 .conteudo-texto p {
     margin-bottom: 20px;
     line-height: 1.6;
-    font-size: 18px;
+    color: #ff0000;
+    font-size: 2vh;
 }
 
 .conteudo-imagem {
@@ -468,19 +469,19 @@ footer i {
 
 .info-transporte h3 {
     font-family: 'Bobby Jones';
-    font-size: 1vh;
+    font-size: 2vh;
     color: #ffffff;
     margin-bottom: 1rem;
 }
 
 .info-transporte p {
-    font-size: 1vh;
+    font-size: 2vh;
     line-height: 1.6;
-    color: #ffffff;
+    color: #0044ff;
 }
 
 .info-transporte strong {
-    color: #ffffff;
+    color: #00ff22;
     font-size: 18px;
 }
 
@@ -715,7 +716,7 @@ z-index: 999;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 3vh;
+  font-size: 2.5vh;
   font-family: 'Bobby Jones';
   font-weight: 300;
   color: #ffffff;

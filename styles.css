@@ -460,7 +460,7 @@ header, .main-section {
     margin-right: 0; /* Remove o espaço extra do último link */
 }
 
-/*footer i {
+footer i {
     margin-right: 6px;
 }
 
@@ -485,7 +485,7 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
-*/
+
 /* fim do footer */
 
 .onde-encontrar {

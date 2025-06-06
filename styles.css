@@ -64,7 +64,7 @@ header {
 nav {
     display: flex;
     gap: 30px;
-    font-size: 18px;
+    font-size: 2vh;
     justify-content: center;
     flex-grow: 0.8;
 
@@ -192,7 +192,7 @@ footer a:hover {
 /* título "Sobre Nós" */
 .conteudo-texto h2 {
     font-size: 3vh;
-    color: #ff0000;
+    color: #565656;
     font-weight: 300;
 }
 
@@ -440,7 +440,6 @@ footer i {
 
 /* título "Onde Estamos" */
 .onde-encontrar h2 {
-    font-family: 'Bobby Jones';
     font-size: 3vh;
     color: #ffffff;
     font-weight: 300;

@@ -178,22 +178,21 @@ footer a:hover {
     flex-wrap: wrap;
 }
 
-/* título "Sobre Nós" */
 .conteudo-texto {
     flex: 1 1 50%;
     padding-right: 40px;
     text-align: justify;
-    color: #ff0000;
+    color: #565656;
     position: relative;
     z-index: 2;
     font-size: 3vh; /* Aumenta um pouco o tamanho */
     margin-top: 20px; /* Adiciona espaçamento acima */
 }
 
+/* título "Sobre Nós" */
 .conteudo-texto h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-    color: #565656;
+    font-size: 3vh;
+    color: #ff0000;
     font-weight: 300;
 }
 
@@ -281,8 +280,8 @@ footer a:hover {
 /* título "Serviços" */
 .titulo-principal {
     font-size: 3vh;
-    color:#86A3A9;
-    margin-bottom: 10px;
+    color:#ffffff;
+    font-weight: 300;
 }
 
 .subtitulo-servicos {
@@ -443,8 +442,8 @@ footer i {
 .onde-encontrar h2 {
     font-family: 'Bobby Jones';
     font-size: 3vh;
-    color: #ff00dd;
-    margin-bottom: 30px;
+    color: #ffffff;
+    font-weight: 300;
 }
 
 .info-transporte {
@@ -670,7 +669,8 @@ z-index: 999;
 /* título "O que nos distingue" */
 .texto-animado h1 {
   font-size: 3vh;
-  color: #2fff00;
+  color: #565656;
+  font-weight: 300;
 }
 
 

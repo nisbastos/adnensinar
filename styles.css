@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Bobby Jones';
-    src: url('/Bobby\ Jones\ Soft.otf') format('otf');
+    src: url('BobbyJonesSoft-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -14,7 +14,7 @@ body {
     position: relative;
     width: 100%;
     overflow-x: hidden;
-    font-family: 'Bobby Jones', sans-serif;
+    font-family: 'Bobby Jones';
 
 }
 .background-overlay {
@@ -83,7 +83,7 @@ nav a:hover {
 }
 
 .inscricao button {
-    font-family: 'Bobby Jones', Arial, sans-serif;
+    font-family: 'Bobby Jones';
     padding: 10px 20px;
     background-color: #ffffff;
     color: #565656;
@@ -315,7 +315,7 @@ footer a:hover {
 }
 
 .botao-orcamento button {
-    font-family: 'Bobby Jones', Arial, sans-serif;
+    font-family: 'Bobby Jones';
     padding: 10px 20px;
     background-color: #ffffff;
     color: #565656;
@@ -343,7 +343,7 @@ header, .main-section {
 
 .kpi {
     text-align: center;
-    font-family: 'Bobby Jones', sans-serif;
+    font-family: 'Bobby Jones';
     width: 190px;
     height: 190px;
     border-radius: 50%;
@@ -451,7 +451,7 @@ footer i {
 }
 
 .info-transporte h3 {
-    font-family: 'Bobby Jones', cursive;
+    font-family: 'Bobby Jones';
     font-size: 18px;
     color: #ffffff;
     margin-bottom: 1rem;
@@ -475,7 +475,7 @@ footer i {
 }
 
 .botao-transporte button {
-    font-family: 'Bobby Jones', Arial, sans-serif;
+    font-family: 'Bobby Jones';
     padding: 10px 20px;
     background-color: #3056d3; /* azul */
     color: #ffffff; /* branco */
@@ -519,7 +519,7 @@ footer i {
 
 .botao-transporte button,
 .botao-mapa a {
-    font-family: 'Bobby Jones', Arial, sans-serif;
+    font-family: 'Bobby Jones';
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
@@ -546,7 +546,7 @@ footer i {
 }
 
 .secao-avaliacoes h2 {
-    font-family: 'Bobby Jones', cursive;
+    font-family: 'Bobby Jones';
     font-size: 32px;
     color: #565656;
     margin-bottom: 10px;
@@ -692,7 +692,7 @@ z-index: 999;
   align-items: center;
   text-align: center;
   font-size: 25px;
-  font-family: 'Bobby Jones', cursive;
+  font-family: 'Bobby Jones';
   font-weight: 300;
   color: #ffffff;
   text-shadow: #565656;

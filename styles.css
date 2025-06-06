@@ -40,6 +40,7 @@ h1, h2, h3, .inscricao button, header, nav a {
 
 header {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     background: rgba(0, 0, 0, 0.6); /* fundo escuro transparente */
@@ -53,6 +54,7 @@ header {
 
 .logo {
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -63,6 +65,7 @@ header {
 
 nav {
     display: flex;
+    flex-direction: column;
     gap: 30px;
     font-size: 2vh;
     justify-content: center;
@@ -85,6 +88,7 @@ nav a:hover {
 
 .inscricao {
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -171,6 +175,7 @@ footer a:hover {
 
 .sobre-nos {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 60px 10%;
@@ -205,6 +210,7 @@ footer a:hover {
 .conteudo-imagem {
     flex: 1 1 40%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -298,6 +304,8 @@ footer a:hover {
     gap: 40px;
     margin-bottom: 10px;
     text-align: left;
+    flex-direction: column;
+
 }
 
 .servico h3 {
@@ -345,6 +353,8 @@ header, .main-section {
     justify-content: center; /* Centraliza os KPIs */
     gap: 60px; /* Espaçamento entre as bolas */
     margin-top: 30px;
+    flex-direction: column;
+
 }
 
 .kpi {
@@ -359,6 +369,7 @@ header, .main-section {
     font-size: 2vh;
     font-weight: bold;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -372,6 +383,7 @@ header, .main-section {
 .kpi-numero {
     display: none; /* Esconde os números por padrão */
     font-size: 30px;
+    flex-direction: column;
     font-weight: 300;
     color: #ffffff;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
@@ -475,6 +487,7 @@ footer i {
 
 .botao-transporte {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-top: 2rem;
 }
@@ -498,6 +511,7 @@ footer i {
 
 .encontrar-conteudo {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 40px;
     justify-content: space-between;
@@ -526,6 +540,7 @@ footer i {
 .botao-mapa a {
     font-family: 'Bobby Jones';
     display: inline-block;
+    flex-direction: column;
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #ffffff; /* Fundo azul */
@@ -617,6 +632,7 @@ footer i {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     cursor: pointer;
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
 }
@@ -647,6 +663,7 @@ footer i {
   overflow: hidden;
   background-color: #ffffff; /* Cor de fundo semelhante à da imagem */
   display: flex;
+    flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -682,6 +699,7 @@ z-index: 999;
   overflow: hidden;
   z-index: 1;
   display: flex;
+    flex-direction: column;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
@@ -694,6 +712,7 @@ z-index: 999;
   opacity: 0.8;
   animation: float 10s ease-in-out infinite;
   display: flex;
+flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;

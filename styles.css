@@ -178,11 +178,12 @@ footer a:hover {
     flex-wrap: wrap;
 }
 
+/* título "Sobre Nós" */
 .conteudo-texto {
     flex: 1 1 50%;
     padding-right: 40px;
     text-align: justify;
-    color: #565656;
+    color: #ff0000;
     position: relative;
     z-index: 2;
     font-size: 3vh; /* Aumenta um pouco o tamanho */
@@ -277,8 +278,10 @@ footer a:hover {
     background: rgba(0, 0, 0, 0.6); /* fundo escuro transparente */
 }
 
+/* título "Serviços" */
 .titulo-principal {
     font-size: 3vh;
+    color:#86A3A9;
     margin-bottom: 10px;
 }
 
@@ -436,10 +439,11 @@ footer i {
     border: none;
 }
 
+/* título "Onde Estamos" */
 .onde-encontrar h2 {
     font-family: 'Bobby Jones';
     font-size: 3vh;
-    color: #ffffff;
+    color: #ff00dd;
     margin-bottom: 30px;
 }
 
@@ -663,9 +667,10 @@ left: 200px;
 z-index: 999;
 }
 
+/* título "O que nos distingue" */
 .texto-animado h1 {
   font-size: 3vh;
-  color: #565656;
+  color: #2fff00;
 }
 
 

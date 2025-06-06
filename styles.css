@@ -179,11 +179,12 @@ footer a:hover {
     align-items: center;
     padding: 60px 10%;
     background-color: #ffffff;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .conteudo-texto {
     flex: 1 1 50%;
+    min-width: 300px;
     padding-right: 40px;
     text-align: justify;
     color: #565656;
@@ -200,6 +201,17 @@ footer a:hover {
     font-weight: 300;
 }
 
+@media (max-width: 768px) {
+    .sobre-nos {
+        flex-direction: column; /* Muda para uma disposição vertical */
+        align-items: center;
+    }
+
+    .conteudo-texto {
+        text-align: center; /* Ajusta o alinhamento para melhor leitura */
+        padding-right: 0;
+    }
+}
 .conteudo-texto p {
     margin-bottom: 20px;
     line-height: 1.6;
@@ -209,7 +221,7 @@ footer a:hover {
 .conteudo-imagem {
     flex: 1 1 40%;
     display: flex;
-    
+    min-width: 300px;
     justify-content: center;
 }
 

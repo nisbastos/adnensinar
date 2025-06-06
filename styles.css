@@ -173,7 +173,6 @@ footer a:hover {
 
 .sobre-nos {
     display: flex;
-    
     justify-content: space-between;
     align-items: center;
     padding: 60px 10%;
@@ -206,6 +205,7 @@ footer a:hover {
     line-height: 1.6;
     color: #565656;
     font-size: 2vh;
+    font-family: 'Assistant';
 }
 
 @media (max-width: 768px) {

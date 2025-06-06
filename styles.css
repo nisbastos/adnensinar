@@ -210,27 +210,7 @@ nav a:hover {
     color: white; /* Texto destacado sobre o fundo */
     z-index: 2; /* Garante que o conteúdo aparece acima da camada escura */
 }
-footer {
-    background-color: #565656;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
 
-footer a {
-    color: #ffffff;
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 2vh;
-
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
 
 .sobre-nos {
     display: flex;
@@ -459,7 +439,7 @@ header, .main-section {
 }
 
 .footer-socials a {
-    color: rgb(98, 0, 0);
+    color: rgb(255, 255, 255);
     margin: 0 10px;
     font-family: 'Assistant';
     font-size: 2vh;
@@ -469,7 +449,8 @@ header, .main-section {
 
 .footer-links {
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 2vh;
+    font-family: "Assistant";
 }
 .footer-links a {
     margin-right: 20px; /* Adiciona espaço à direita de cada link */
@@ -479,10 +460,32 @@ header, .main-section {
     margin-right: 0; /* Remove o espaço extra do último link */
 }
 
-footer i {
+/*footer i {
     margin-right: 6px;
 }
 
+footer {
+    background-color: #565656;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 2vh;
+
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+*/
 /* fim do footer */
 
 .onde-encontrar {

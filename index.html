@@ -124,9 +124,15 @@
     <div class="elfsight-app-d71066a5-94fa-4558-880d-830c58e14ec5" data-elfsight-app-lazy></div>
 
       <div class="botao-orcamento">
-    <button onclick="window.location.href='mailto:adnensinar@gmail.com'">
-        Pedir Orçamento
-    </button>
+    <form action="https://formspree.io/f/teu-id-aqui" method="POST">
+    <label for="email">O seu email:</label><br>
+    <input type="email" name="email" id="email" required><br><br>
+
+    <label for="mensagem">A sua mensagem:</label><br>
+    <textarea name="message" id="mensagem" rows="5" required></textarea><br><br>
+
+    <button type="submit">Pedir Orçamento</button>
+  </form>
 </div>
 
     </section>

@@ -27,6 +27,14 @@
    ========================= */
 
 :root {
+  --font-title: "Bobby Jones", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-body: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  --fs-nav: clamp(14px, 1.8vh, 18px);
+  --fs-h2: clamp(22px, 3vh, 34px);
+  --fs-body: clamp(14px, 2vh, 18px);
+
+
   --c-dark: #565656;
   --c-light: #ffffff;
 
@@ -52,6 +60,7 @@
 
 html,
 body {
+  font-family: var(--font-body);
   height: 100%;
 }
 
@@ -68,14 +77,18 @@ h3,
 .site-header,
 .site-nav a,
 .btn {
-  font-family: "Bobby Jones";
+  font-size: var(--fs-nav);
+
+  font-family: var(--font-title);
 }
+
 
 p,
 a,
 li {
-  font-family: "Assistant";
+  font-family: var(--font-body);
 }
+
 
 /* Acessibilidade */
 .skip-link {
@@ -108,7 +121,7 @@ li {
   cursor: pointer;
   text-decoration: none;
 
-  font-size: var(--text-base);
+  font-size: var(--fs-body);
   line-height: 1;
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
@@ -150,7 +163,7 @@ li {
   gap: 30px;
   justify-content: center;
   flex-grow: 0.8;
-  font-size: var(--text-base);
+  font-size: var(--fs-nav);
 }
 
 .site-nav a {
@@ -230,7 +243,7 @@ li {
 .conteudo-texto p {
   margin: 0 0 20px;
   line-height: 1.6;
-  font-size: var(--text-base);
+  font-size: var(--fs-body);
 }
 
 .conteudo-imagem {
@@ -379,7 +392,7 @@ li {
 }
 
 .servico h3 {
-  font-size: var(--text-base);
+  font-size: var(--fs-body);
   font-weight: 300;
   margin: 0 0 10px;
 }
@@ -387,7 +400,7 @@ li {
 .servico p {
   margin: 0 0 20px;
   line-height: 1.6;
-  font-size: var(--text-base);
+  font-size: var(--fs-body);
 }
 
 /* Botões dentro das secções */
@@ -506,7 +519,7 @@ li {
 .info-transporte p {
   margin: 0 0 20px;
   line-height: 1.6;
-  font-size: var(--text-base);
+  font-size: var(--fs-body);
 }
 
 /* =========================
@@ -522,7 +535,7 @@ footer {
 
 .footer-links {
   margin-bottom: 10px;
-  font-size: var(--text-base);
+  font-size: var(--fs-body);
 }
 
 .footer-links a {
@@ -540,7 +553,7 @@ footer {
   color: var(--c-light);
   margin: 0 10px;
   text-decoration: none;
-  font-size: var(--text-base);
+  font-size: var(--fs-body);
   transition: opacity 0.2s ease;
 }
 .footer-socials a:hover {
@@ -559,7 +572,7 @@ footer i {
   background: var(--c-brand-1);
   color: var(--c-dark);
   text-align: center;
-  font-size: var(--text-base);
+  font-size: var(--fs-body);
   padding: 10px;
   width: 100%;
   font-weight: bold;
@@ -584,6 +597,28 @@ footer i {
   font-size: 15px;
 }
 
+
+/* =========================
+   Tipografia uniforme (títulos e textos)
+   ========================= */
+
+.conteudo-texto h2,
+.titulo-principal,
+.texto-animado h2 {
+  font-family: var(--font-title);
+  font-size: var(--fs-h2);
+  font-weight: 300;
+}
+
+.conteudo-texto p,
+.servico p,
+.info-transporte p,
+.footer-links,
+.footer-links a {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+}
+
 /* =========================
    12) Responsivo
    ========================= */
@@ -597,6 +632,8 @@ footer i {
   }
 
   .site-nav {
+  font-size: var(--fs-nav);
+
     flex-direction: column;
     gap: 10px;
     margin-top: 10px;

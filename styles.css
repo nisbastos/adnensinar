@@ -25,6 +25,10 @@
 /* =========================
    2) Variáveis / Reset base
    ========================= */
+.header-fixed-group{
+  width: 100%;
+  justify-content: space-between;
+}
 
 :root {
   --fixedbar-h: 78px;
@@ -277,6 +281,11 @@ body.has-fixed-cta .header-fixed-group {
 /* =========================
    6) Sobre Nós + Carrossel
    ========================= */
+#sobre,
+#sobre .conteudo-texto,
+#sobre .conteudo-texto p{
+  color: var(--c-dark) !important; /* #565656 */
+}
 
 .sobre-nos {
   display: flex;
@@ -412,6 +421,19 @@ body.has-fixed-cta .header-fixed-group {
   margin: 0;
   font-size: 1.5rem;
   font-weight: 300;
+}
+.kpi,
+.kpi p,
+.kpi p span{
+  font-family: var(--font-title) !important; /* Bobby Jones */
+}
+.blob,
+.blob p{
+  font-family: var(--font-title) !important; /* Bobby Jones */
+}
+
+.blob p{
+  margin: 0;
 }
 
 /* =========================

@@ -1,818 +1,611 @@
-/* definição das fontes
-- Títulos: Bobby Jones, 3vh;
-- Subtítulos: Bobby Jones, 2vh;
-- Body: Assistant, 2vh;
-- Butões: Bobby Jones, 2vh; */
+/* ==========================================================================
+   ADN Ensinar — styles.css (organizado e sem repetição)
+   ========================================================================== */
+
+/* =========================
+   1) Fontes
+   ========================= */
 
 @font-face {
-    font-family: 'Bobby Jones';
-    src: url('BobbyJonesSoft-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Bobby Jones";
+  src: url("BobbyJonesSoft-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Assistant';
-    src: url('Assistant-ExtraLight.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
+  font-family: "Assistant";
+  src: url("Assistant-ExtraLight.woff2") format("woff2");
+  font-weight: 200; /* ExtraLight */
+  font-style: normal;
+  font-display: swap;
 }
 
-/* background */
+/* =========================
+   2) Variáveis / Reset base
+   ========================= */
+
+:root {
+  --c-dark: #565656;
+  --c-light: #ffffff;
+
+  --c-brand-1: #c1dbdc;
+  --c-brand-2: #86a3a9;
+
+  --c-blob-green: #cee3d1;
+  --c-blob-yellow: #ffe7a9;
+  --c-blob-pink: #fbd1c1;
+
+  --shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.2);
+  --radius-lg: 12px;
+
+  --text-base: 2vh;
+  --text-title: 3vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
 
 body {
-    background: url('homepage1.jpg') no-repeat center center fixed;
-    background-size: cover;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+  margin: 0;
+  overflow-x: hidden;
+  background: url("homepage1.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
-.background-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
+h1,
+h2,
+h3,
+.site-header,
+.site-nav a,
+.btn {
+  font-family: "Bobby Jones";
 }
 
-h1, h2, h3, .inscricao button, header, nav a {
-    font-family: 'Bobby Jones';
-}
- 
-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    width: 100%;
-    position: relative;
-    z-index: 2;
+p,
+a,
+li {
+  font-family: "Assistant";
 }
 
-.logo {
-    display: flex;
-    align-items: center;
+/* Acessibilidade */
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: -999px;
+  background: var(--c-light);
+  color: var(--c-dark);
+  padding: 10px 14px;
+  border-radius: 8px;
+  z-index: 9999;
+}
+.skip-link:focus {
+  top: 10px;
+  left: 10px;
+}
+
+/* =========================
+   3) Componentes (botões)
+   ========================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+
+  font-size: var(--text-base);
+  line-height: 1;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn--light {
+  background: var(--c-light);
+  color: var(--c-dark);
+}
+.btn--light:hover {
+  background: var(--c-brand-1);
+  color: var(--c-light);
+}
+
+/* =========================
+   4) Header / Navegação
+   ========================= */
+
+.site-header {
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 20px;
+  width: 100%;
+
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .logo img {
-    max-height: 80px;
-    width: auto;
+  max-height: 80px;
+  width: auto;
 }
 
-nav {
-    display: flex;
-    gap: 30px;
-    font-size: 2vh;
-    justify-content: center;
-    flex-grow: 0.8;
-
+.site-nav {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-grow: 0.8;
+  font-size: var(--text-base);
 }
 
-nav a {
-    text-decoration: none;
-    color: white;
-    padding: 10px;
-    transition: 0.3s;
+.site-nav a {
+  color: var(--c-light);
+  text-decoration: none;
+  padding: 10px;
+  transition: 0.2s ease;
+}
+.site-nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
 }
 
-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+/* =========================
+   5) Hero
+   ========================= */
+
+.hero {
+  position: relative;
+  min-height: 400px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--c-light);
 }
 
-
-.inscricao {
-    display: flex;
-    align-items: center;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
 }
 
-/* ------------------- CONFIGURAÇÃO DE BOTÕES ------------------- */
-
-/* botão Inscrições */
-
-.inscricao button {
-    font-family: 'Bobby Jones';
-    padding: 10px 20px;
-    background-color: #ffffff;
-    color: #565656;
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    font-size: 2vh;
+.hero__inner {
+  position: relative;
+  z-index: 1;
 }
 
-.inscricao button:hover {
-    background-color: #C1DBDC;
-    color:#ffffff
+.hero__logo img {
+  max-height: 250px;
+  width: auto;
 }
 
-/* botão Pedir Orçamento */
-
-.botao-orcamento {
-    text-align: center;
-    position: relative;
-    z-index: 5;
+.hero h1 {
+  margin: 20px 0 0;
+  font-size: 30px;
+  font-weight: 300;
 }
 
-.botao-orcamento button {
-    font-family: 'Bobby Jones';
-    padding: 10px 20px;
-    background-color: #ffffff;
-    color: #565656;
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    font-size: 2vh;
-}
-
-.botao-orcamento button:hover {
-    background-color: #C1DBDC;
-    color:#ffffff
-}
-
-/* botão Como Chegar Até Nós */
-
-.botao-transporte {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.botao-transporte button {
-    font-family: 'Bobby Jones';
-    padding: 10px 20px;
-    background-color: #ffffff;
-    color: #565656;
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    font-size: 2vh;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.botao-transporte button:hover {
-    background-color: #C1DBDC;
-    color: #ffffff;
-}
-
-/* ------------------- CONFIGURAÇÃO DE BOTÕES ------------------- */
-
-
-
-
-
-
-.main-section {
-    position: relative;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-}
-
-.main-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* camada escura */
-    z-index: 1;
-}
-
-.logo-container,
-.main-section h1 {
-    position: relative;
-    color: white;
-    z-index: 2;
-    font-size: 30px; /* Aumenta um pouco o tamanho */
-    font-weight: 300; /* Torna a fonte mais leve */
-    margin-top: 20px; /* Adiciona espaçamento acima */
-
-}
-
-.logo-container img {
-    max-height: 250px; /* Ajusta o tamanho do logótipo */
-    width: auto;
-}
-
-.logo-container,
-.main-section h1{
-    position: relative;
-    color: white; /* Texto destacado sobre o fundo */
-    z-index: 2; /* Garante que o conteúdo aparece acima da camada escura */
-}
-
+/* =========================
+   6) Sobre Nós + Carrossel
+   ========================= */
 
 .sobre-nos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 60px 10%;
-    background-color: #ffffff;
-    flex-wrap: nowrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;
+  background: var(--c-light);
+  gap: 40px;
 }
 
 .conteudo-texto {
-    flex: 1 1 50%;
-    min-width: 300px;
-    padding-right: 40px;
-    text-align: justify;
-    color: #565656;
-    position: relative;
-    z-index: 2;
-    font-size: 3vh; /* Aumenta um pouco o tamanho */
-    margin-top: 20px; /* Adiciona espaçamento acima */
+  flex: 1 1 50%;
+  min-width: 300px;
+  color: var(--c-dark);
+  text-align: justify;
 }
 
-/* título "Sobre Nós" */
 .conteudo-texto h2 {
-    font-size: 3vh;
-    color: #565656;
-    font-weight: 300;
+  font-size: var(--text-title);
+  font-weight: 300;
+  margin: 0 0 10px;
 }
 
-/* conteúdo de texto sobre o "Sobre Nós" */
 .conteudo-texto p {
-    margin-bottom: 20px;
-    line-height: 1.6;
-    color: #565656;
-    font-size: 2vh;
-    font-family: 'Assistant';
+  margin: 0 0 20px;
+  line-height: 1.6;
+  font-size: var(--text-base);
 }
-
-@media (max-width: 768px) {
-    .sobre-nos {
-        flex-direction: column; /* Muda para uma disposição vertical */
-        align-items: center;
-    }
-
-    .conteudo-texto {
-        text-align: center; /* Ajusta o alinhamento para melhor leitura */
-        padding-right: 0;
-    }
-}
-
-
 
 .conteudo-imagem {
-    flex: 1 1 40%;
-    display: flex;
-    min-width: 300px;
-    justify-content: center;
+  flex: 1 1 40%;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
 }
 
-.conteudo-imagem img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    opacity: 0.9;
-}
+/* Carrossel */
 .carrossel {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .carrossel img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
 }
 
 .carrossel img.active {
-    opacity: 1;
-    z-index: 1;
+  opacity: 1;
+  z-index: 1;
 }
 
 .carrossel-controle {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(86, 86, 86, 0.6);
-    border: none;
-    color: white;
-    font-size: 24px;
-    padding: 10px 15px;
-    cursor: pointer;
-    z-index: 2;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(86, 86, 86, 0.6);
+  border: none;
+  color: var(--c-light);
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
 }
-
 .carrossel-controle:hover {
-    background-color: rgba(86, 86, 86, 0.9);
+  background: rgba(86, 86, 86, 0.9);
 }
-
 .carrossel-controle.anterior {
-    left: 10px;
+  left: 10px;
 }
-
 .carrossel-controle.seguinte {
-    right: 10px;
-}
-.secao-servicos {
-    color: white;
-    padding: 80px 10% 60px;
-    text-align: justify;
-    background-image: url('sala1.jpg');
-    background-size: cover;        /* cobre toda a secção */
-    background-position: center;   /* centraliza a imagem */
-    background-repeat: no-repeat;  /* impede repetição */
-    background: rgba(0, 0, 0, 0.6); /* fundo escuro transparente */
-}
-
-/* título "Serviços" */
-.titulo-principal {
-    font-size: 3vh;
-    color:#ffffff;
-    font-weight: 300;
-}
-
-.subtitulo-servicos {
-    font-size: 3vh;
-    color: #ffffff;
-    margin-bottom: 10px;
-    font-weight: 300;
-}
-
-.grade-servicos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-/* subtítulos dos serviços */
-.servico h3 {
-    font-size: 2vh;
-    color: #ffffff;
-    margin-bottom: 10px;
-    font-weight: 300;
-}
-
-/* conteúdo dos serviços */
-.servico p {
-    margin-bottom: 20px;
-    line-height: 1.6;
-    color: #ffffff;
-    font-size: 2vh;
-    font-family: 'Assistant';
-}
-
-
-
-header, .main-section {
-    position: relative;
-    z-index: 1;
+  right: 10px;
 }
 
 /* KPIs */
-
 .kpis {
-    display: flex;
-    justify-content: center; /* Centraliza os KPIs */
-    gap: 60px; /* Espaçamento entre as bolas */
-    margin-top: 30px;
-    flex-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 30px;
+  flex-wrap: nowrap;
 }
 
 .kpi {
-    text-align: center;
-    font-family: 'Bobby Jones';
-    width: 190px;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    background-color: #C1DBDC;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-    font-size: 1.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
-    flex-shrink: 0;
+  width: 190px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: var(--c-brand-1);
+  color: var(--c-light);
+
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  cursor: default;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .kpi:hover {
-    background-color: #86A3A9; /* Cor ao passar o rato */
-    transform: scale(1.3); /* Pequeno efeito de zoom */
+  background: var(--c-brand-2);
+  transform: scale(1.1);
 }
+
 .kpi-numero {
-    display: none; /* Esconde os números por padrão */
-    font-size: 1.5rem;
-    color: #ffffff;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  display: none;
+  font-size: 1.5rem;
 }
 
 .kpi:hover .kpi-numero {
-    display: inline; /* Exibe os números ao passar o rato */
+  display: inline;
 }
 
 .kpi p {
-    font-size: 1.5rem;
-    font-family: 'Bobby Jones';
-    color: rgb(255, 255, 255);
+  margin: 0;
+  font-size: 1.5rem;
+  font-family: "Bobby Jones";
 }
 
-/* footer */
+/* =========================
+   7) Secções com imagem + overlay
+   ========================= */
 
-.footer-socials {
-    margin-top: 10px;
+.secao-imagem {
+  position: relative;
+  padding: 80px 10% 60px;
+  color: var(--c-light);
 }
 
-.footer-socials a {
-    color: rgb(255, 255, 255);
-    margin: 0 10px;
-    font-family: 'Assistant';
-    font-size: 2vh;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    text-decoration: none;
+.secao-imagem--sala1 {
+  background: url("sala1.jpg") center / cover no-repeat;
 }
 
-.footer-links {
-    margin-bottom: 10px;
-    font-size: 2vh;
-    font-family: "Assistant";
-    text-decoration: none;
-}
-.footer-links a {
-    margin-right: 20px; /* Adiciona espaço à direita de cada link */
-    text-decoration: none;
+/* Overlay escuro para garantir legibilidade */
+.secao-imagem::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
 }
 
-.footer-links a:last-child {
-    margin-right: 0; /* Remove o espaço extra do último link */
-    text-decoration: none;
+.secao-imagem__inner {
+  position: relative;
+  z-index: 1;
 }
 
-footer i {
-    margin-right: 6px;
-    text-decoration: none;
+.titulo-principal {
+  font-size: var(--text-title);
+  font-weight: 300;
+  margin: 0 0 20px;
 }
 
-footer {
-    background-color: #565656;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    text-decoration: none;
+/* Serviços */
+.grade-servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  text-align: left;
 }
 
-footer a {
-    color: #ffffff;
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 2vh;
-    text-decoration: none;
-
+.servico h3 {
+  font-size: var(--text-base);
+  font-weight: 300;
+  margin: 0 0 10px;
 }
 
-footer a:hover {
-    text-decoration: none;
+.servico p {
+  margin: 0 0 20px;
+  line-height: 1.6;
+  font-size: var(--text-base);
 }
 
-/* fim do footer */
-
-.onde-encontrar {
-    background-image: url('sala1.jpg');
-    background-size: cover;        /* cobre toda a secção */
-    background-position: center;   /* centraliza a imagem */
-    background-repeat: no-repeat;  /* impede repetição */
-    background: rgba(0, 0, 0, 0.6); /* fundo escuro transparente */;
-    color: #565656;
-    padding: 60px 10%;
-    text-align: justify;
-}
-.mapa iframe {
-    pointer-events: auto;
-    width: 100%;
-    height: 350px;
-    z-index: 1;
-    position: relative;
-    border: none;
+/* Botões dentro das secções */
+.botao-orcamento,
+.botao-transporte {
+  margin-top: 2rem;
+  text-align: center;
 }
 
-/* título "Onde Estamos" */
-.onde-encontrar h2 {
-    font-size: 3vh;
-    color: #ffffff;
-    font-weight: 300;
-}
+/* =========================
+   8) Blobs (O que nos distingue)
+   ========================= */
 
-.info-transporte {
-    padding: 1.5rem 2rem;
-    border-radius: 12px;
-    font-family: 'Assistant';
-    font-weight: 300;
-    font-size: 2vh;
-    margin-top: 1rem;
-
-}
-
-.info-transporte h3 {
-    font-family: 'Bobby Jones';
-    font-size: 2vh;
-    color: #ffffff;
-    margin-bottom: 1rem;
-}
-
-/* conteúdo do texto de onde estamos */
-.info-transporte p {
-    margin-bottom: 20px;
-    line-height: 1.6;
-    color: #ffffff;
-    font-size: 2vh;
-    font-family: 'Assistant';
-}
-
-.info-transporte strong {
-    color: #00ff22;
-    font-size: 18px;
-}
-
-
-
-.encontrar-conteudo {
-    display: flex;
-    
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.mapa, .info-transporte {
-    flex: 1 1 45%;
-}
-
-.info-transporte ul {
-    list-style: none;
-    padding: 0;
-    font-family: 'Assistant';
-    font-weight: lighter;
-    text-align: left;
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-.info-transporte li {
-    margin-bottom: 10px;
-}
-
-
-
-.secao-avaliacoes {
-    background-color: #f9f9f9;
-    padding: 60px 10%;
-    text-align: center;
-}
-
-.secao-avaliacoes h2 {
-    font-family: 'Bobby Jones';
-    font-size: 2vh;
-    color: #565656;
-    margin-bottom: 10px;
-}
-
-.subtitulo-avaliacoes {
-    font-family: 'Assistant';
-    font-size: 18px;
-    color: #777;
-    margin-bottom: 40px;
-}
-
-/* Espaçamento extra abaixo do widget se necessário */
-.elfsight-app-d71066a5-94fa-4558-880d-830c58e14ec5 {
-    max-width: 100%;
-    margin: 0 auto;
-}
-/* Estilo para o alerta */
-/* Estilo para o alerta */
-/* Estilo para o alerta */
-/* Estilo para o alerta */
-/* Estilo para o alerta */
-/* Estilo para o alerta */
-.alerta {
-    background-color: #C1DBDC; /* Azul */
-    color: #565656;
-    text-align: center;
-    font-size: 2vh;
-    padding: 10px;
-    width: 100%;
-    font-family: 'Assistant';
-    font-weight: bold; /* Destaca as letras */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-
-/* Botão de fechar o alerta */
-.alerta .fechar {
-    position: absolute;
-    text-align: center;
-    top: 0.5px;
-    right: 15px;
-    font-size: 2vh;
-    color: #565656;
-    cursor: pointer;
-    font-weight: bold;
-    line-height: 1;
-    padding: 5px;
-}
-.bolinha-alerta {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #FFE7A9;
-    color: #565656;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-family: 'Bobby Jones';
-    font-size: 2vh;
-    font-weight: 200;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.bolinha-alerta .fechar {
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 2vh;
-    transform: scale (1.1);
-}
-
-
-@keyframes mover {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(300px, 0); }
-    50% { transform: translate(300px, 300px); }
-    75% { transform: translate(0, 300px); }
-    100% { transform: translate(0, 0); }
-}
-
-/* Estilo para a contagem regressiva */
-.contador {
-    font-weight: bold;
-    font-size: 15px;
-}
 .secao-animacao {
   position: relative;
   height: 500px;
   overflow: hidden;
-  background-color: #ffffff; /* Cor de fundo semelhante à da imagem */
-  display: flex;
-    
-  align-items: center;
-  justify-content: center;
+  background: var(--c-light);
+  display: grid;
+  place-items: center;
   text-align: center;
-  padding: 0px;
 }
 
 .texto-animado {
-font-family: 'Bobby Jones';
-font-size: 2vh;
-color: #ffffff;
-margin-bottom: 30px;
-position: absolute;
-text-align: left;
-top: 30px;
-left: 200px;
-z-index: 999;
+  position: absolute;
+  top: 30px;
+  left: 200px;
+  z-index: 5;
+  text-align: left;
 }
 
-/* título "O que nos distingue" */
-.texto-animado h1 {
-  font-size: 3vh;
-  color: #565656;
+.texto-animado h2 {
+  margin: 0;
+  font-size: var(--text-title);
+  color: var(--c-dark);
   font-weight: 300;
 }
 
-
 .blobs {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
+  inset: 0;
   z-index: 1;
-  display: flex;
-    
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 80px;
+  overflow: hidden;
 }
 
 .blob {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.8;
-  animation: float 10s ease-in-out infinite;
-  display: flex;
-    
-  justify-content: center;
-  align-items: center;
+  opacity: 0.85;
+
+  display: grid;
+  place-items: center;
   text-align: center;
-  font-size: 2.5vh;
-  font-family: 'Bobby Jones';
-  font-weight: 300;
-  color: #ffffff;
-  text-shadow: #565656;
+
   padding: 20px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,1);
+  font-size: 2.5vh;
+  font-family: "Bobby Jones";
+  font-weight: 300;
+  color: var(--c-light);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+
+  animation: float 10s ease-in-out infinite;
 }
 
-/* Definição das cores dos blobs e suas posições */
-.blob1 { width: 250px; height: 250px; background-color: #CEE3D1; top: 50%; left: 10%; z-index: 998; }
-.blob2 { width: 230px; height: 230px; background-color: #FFE7A9; top: 50%; left: 30%;z-index: 998; }
-.blob3 { width: 260px; height: 260px; background-color: #FBD1C1; top: 50%; right: 10%;z-index: 998; }
-.blob4 { width: 200px; height: 200px; background-color: #565656; bottom: 50%; right: 20%; z-index: 998;}
-.blob5 { width: 160px; height: 160px; background-color: #C1DBDC; top: 50%; left: 50%;z-index: 998; }
-.blob6 { width: 180px; height: 180px; background-color: #FBD1C1; bottom: 50%; left: 25%; z-index: 998;}
-.blob7 { width: 140px; height: 140px; background-color: #CEE3D1; bottom: 50%; right: 35%; z-index: 998;}
+/* Blobs com texto */
+.blob1 { width: 250px; height: 250px; background: var(--c-blob-green); top: 50%; left: 10%; }
+.blob2 { width: 230px; height: 230px; background: var(--c-blob-yellow); top: 50%; left: 30%; }
+.blob3 { width: 260px; height: 260px; background: var(--c-blob-pink); top: 50%; right: 10%; }
+.blob4 { width: 200px; height: 200px; background: var(--c-dark); bottom: 50%; right: 20%; }
+.blob5 { width: 160px; height: 160px; background: var(--c-brand-1); top: 50%; left: 50%; }
+.blob6 { width: 180px; height: 180px; background: var(--c-blob-pink); bottom: 50%; left: 25%; }
+.blob7 { width: 140px; height: 140px; background: var(--c-blob-green); bottom: 50%; right: 35%; }
 
-/* Bolhas decorativas sem texto */
-.deco-blob1 { width: 120px; height: 120px; background-color: #CEE3D1; top: 10%; left: 5%; opacity: 0.4; }
-.deco-blob2 { width: 180px; height: 180px; background-color: #FBD1C1; top: 30%; right: 15%; opacity: 0.4; }
-.deco-blob3 { width: 160px; height: 160px; background-color: #C1DBDC; bottom: 50%; left: 15%; opacity: 0.4; }
-.deco-blob4 { width: 140px; height: 140px; background-color: #FFE7A9; bottom: 10%; right: 30%; opacity: 0.4; }
-.deco-blob5 { width: 200px; height: 200px; background-color: #C1DBDC; top: 15%; right: 45%; opacity: 0.4; }
-.deco-blob6 { width: 180px; height: 180px; background-color: #CEE3D1; bottom: 20%; left: 30%; opacity: 0.4; }
-.deco-blob7 { width: 140px; height: 140px; background-color: #FBD1C1; top: 25%; right: 40%; opacity: 0.4; }
-.deco-blob8 { width: 160px; height: 160px; background-color: #565656; bottom: 25%; right: 25%; opacity: 0.4; }
+/* Blobs decorativos sem texto */
+.deco-blob1 { width: 120px; height: 120px; background: var(--c-blob-green); top: 10%; left: 5%; opacity: 0.4; }
+.deco-blob2 { width: 180px; height: 180px; background: var(--c-blob-pink); top: 30%; right: 15%; opacity: 0.4; }
+.deco-blob3 { width: 160px; height: 160px; background: var(--c-brand-1); bottom: 50%; left: 15%; opacity: 0.4; }
+.deco-blob4 { width: 140px; height: 140px; background: var(--c-blob-yellow); bottom: 10%; right: 30%; opacity: 0.4; }
+.deco-blob5 { width: 200px; height: 200px; background: var(--c-brand-1); top: 15%; right: 45%; opacity: 0.4; }
+.deco-blob6 { width: 180px; height: 180px; background: var(--c-blob-green); bottom: 20%; left: 30%; opacity: 0.4; }
+.deco-blob7 { width: 140px; height: 140px; background: var(--c-blob-pink); top: 25%; right: 40%; opacity: 0.4; }
+.deco-blob8 { width: 160px; height: 160px; background: var(--c-dark); bottom: 25%; right: 25%; opacity: 0.4; }
+
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-20px) rotate(10deg); }
 }
 
+/* =========================
+   9) Onde Estamos
+   ========================= */
+
+.onde-encontrar {
+  text-align: justify;
+}
+
+.encontrar-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.mapa,
+.info-transporte {
+  flex: 1 1 45%;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+}
+
+.info-transporte p {
+  margin: 0 0 20px;
+  line-height: 1.6;
+  font-size: var(--text-base);
+}
+
+/* =========================
+   10) Footer
+   ========================= */
+
+footer {
+  background: var(--c-dark);
+  color: var(--c-light);
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+  font-size: var(--text-base);
+}
+
+.footer-links a {
+  color: var(--c-light);
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.footer-links a:last-child {
+  margin-right: 0;
+}
+
+.footer-socials a {
+  color: var(--c-light);
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: var(--text-base);
+  transition: opacity 0.2s ease;
+}
+.footer-socials a:hover {
+  opacity: 0.8;
+}
+
+footer i {
+  margin-right: 6px;
+}
+
+/* =========================
+   11) (Opcional) Alertas / Countdown
+   ========================= */
+
+.alerta {
+  background: var(--c-brand-1);
+  color: var(--c-dark);
+  text-align: center;
+  font-size: var(--text-base);
+  padding: 10px;
+  width: 100%;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.alerta__fechar {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  background: transparent;
+  border: 0;
+  color: var(--c-dark);
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.contador {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* =========================
+   12) Responsivo
+   ========================= */
+
 @media (max-width: 768px) {
-  /* Header */
-  header {
+  .site-header {
     flex-direction: column;
     align-items: center;
     padding: 10px;
     text-align: center;
   }
 
-  nav {
-    display: flex;
+  .site-nav {
     flex-direction: column;
     gap: 10px;
     margin-top: 10px;
   }
 
-  .inscricao {
-    margin-top: 15px;
-  }
-
-  /* Main Section (Hero) */
-  .main-section {
-    padding: 20px;
-    text-align: center;
-  }
-
-  .main-section h1 {
+  .hero h1 {
     font-size: 2rem;
   }
 
-  .logo-container img {
-    max-width: 80%;
-    height: auto;
-  }
-
-  /* Sobre Nós */
   .sobre-nos {
     flex-direction: column;
     padding: 20px;
@@ -823,12 +616,6 @@ z-index: 999;
     width: 100%;
   }
 
-  .carrossel img {
-    width: 100%;
-    height: auto;
-  }
-
-  /* KPIs */
   .kpis {
     flex-direction: column;
     gap: 20px;
@@ -837,87 +624,32 @@ z-index: 999;
 
   .kpi {
     width: 150px;
-    height: 150px;
-    font-size: 1.5rem;
   }
 
-  /* Serviços */
   .grade-servicos {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px;
   }
 
-  .servico {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Blobs section */
-  .blobs {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 20px;
-  }
-
-  .blob {
-    font-size: 0.9rem;
-    padding: 10px;
-  }
-
-  .texto-animado h1 {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  /* Onde Encontrar */
   .encontrar-conteudo {
     flex-direction: column;
-    padding: 20px;
   }
 
   .mapa iframe {
-    width: 100%;
     height: 300px;
   }
 
-  /* Footer */
-  footer {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-    text-align: center;
+  .texto-animado {
+    left: 20px;
+    right: 20px;
   }
 
-  .footer-links,
-  .footer-socials {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .footer-links a,
-  .footer-socials a {
-    font-size: 0.9rem;
-  }
-
-  /* Botões */
-  .botao-orcamento button,
-  .botao-transporte button,
-  .inscricao button {
+  .btn {
     width: 100%;
-    font-size: 1rem;
-    padding: 12px;
   }
 
-  /* Alerta topo */
-  .bolinha-alerta {
-    font-size: 0.85rem;
-    padding: 8px 12px;
-    text-align: center;
-  }
-
-  /* Ajuste para evitar zoom ao tocar em inputs (caso uses no futuro) */
+  /* Evitar zoom ao tocar em inputs (caso uses no futuro) */
   input,
   button,
   select,

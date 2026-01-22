@@ -1,265 +1,261 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>ADN Ensinar</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="description"
+      content="ADN Ensinar — Centro de Estudos em Guimarães. Apoio ao estudo, explicações e preparação para exames."
+    />
+
+    <!-- Fonts / Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <!-- Alerta no topo -->
-    
+    <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
 
-    <div class="background-overlay"></div>
+    <!-- (Opcional) Barra de alerta no topo
+    <div id="alerta" class="alerta" role="region" aria-label="Aviso">
+      <span>Mensagem do alerta aqui…</span>
+      <button class="alerta__fechar" type="button" data-alert-close aria-label="Fechar">×</button>
+    </div>
+    -->
 
-    <header>
+    <header class="site-header">
       <div class="logo">
         <img src="marca_branco.png" alt="Logótipo ADN Ensinar" />
       </div>
-      <nav>
+
+      <nav class="site-nav" aria-label="Menu principal">
         <a href="#sobre">Sobre Nós</a>
         <a href="#servicos">Serviços</a>
+        <a href="#distingue">O que nos distingue</a>
         <a href="#onde-encontrar">Onde Estamos</a>
-        <!-- Novo menu adicionado -->
         <a href="#contactos">Contactos</a>
       </nav>
-      <div class="inscricao">
-        <button
-          id="inscricao"
-          onclick="window.open('https://forms.gle/UDoqs9ijTz8hM2a46', '_blank')"
+
+      <div class="header-cta">
+        <a
+          class="btn btn--light"
+          href="https://forms.gle/UDoqs9ijTz8hM2a46"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Inscrições
-        </button>
+        </a>
       </div>
     </header>
 
-    <section class="main-section">
-      <div class="logo-container">
-        <img src="logo_branco.png" alt="Logótipo Centro de Estudos" />
-      </div>
-      <h1>Centro de Estudos</h1>
-    </section>
-
-    <section class="sobre-nos" id="sobre">
-      <div class="conteudo-texto">
-        <h2>Sobre Nós</h2>
-        <p>
-          No ADN Ensinar, acreditamos que cada Aluno tem um potencial único. Com
-          uma equipa dedicada e um ambiente acolhedor, oferecemos apoio ao
-          estudo, explicações personalizadas e preparação para exames. Estamos
-          localizados em Guimarães, com instalações modernas, pensadas para
-          inspirar confiança e sucesso académico.
-        </p>
-        <p>
-          A nossa missão é promover o gosto pela aprendizagem, a autonomia e o
-          pensamento crítico. Trabalhamos lado a lado com Alunos e Encarregados
-          de Educação para garantir um acompanhamento pedagógico de excelência.
-        </p>
-
-        <!-- KPI's -->
-        <div class="kpis">
-          <div class="kpi">
-            <p><span class="kpi-numero">15</span> Docentes</p>
+    <main id="conteudo">
+      <!-- Hero -->
+      <section class="hero" aria-label="ADN Ensinar">
+        <div class="hero__inner">
+          <div class="hero__logo">
+            <img src="logo_branco.png" alt="Logótipo Centro de Estudos" />
           </div>
-          <div class="kpi">
-            <p><span class="kpi-numero">+ de 50</span> Alunos</p>
+          <h1>Centro de Estudos</h1>
+        </div>
+      </section>
+
+      <!-- Sobre Nós -->
+      <section class="sobre-nos" id="sobre">
+        <div class="conteudo-texto">
+          <h2>Sobre Nós</h2>
+          <p>
+            No ADN Ensinar, acreditamos que cada Aluno tem um potencial único. Com
+            uma equipa dedicada e um ambiente acolhedor, oferecemos apoio ao
+            estudo, explicações personalizadas e preparação para exames. Estamos
+            localizados em Guimarães, com instalações modernas, pensadas para
+            inspirar confiança e sucesso académico.
+          </p>
+          <p>
+            A nossa missão é promover o gosto pela aprendizagem, a autonomia e o
+            pensamento crítico. Trabalhamos lado a lado com Alunos e Encarregados
+            de Educação para garantir um acompanhamento pedagógico de excelência.
+          </p>
+
+          <!-- KPI's -->
+          <div class="kpis" aria-label="Indicadores">
+            <div class="kpi"><p><span class="kpi-numero">15</span> Docentes</p></div>
+            <div class="kpi"><p><span class="kpi-numero">+ de 50</span> Alunos</p></div>
+            <div class="kpi"><p><span class="kpi-numero">96%</span> Taxa Sucesso</p></div>
           </div>
-          <div class="kpi">
-            <p><span class="kpi-numero">96%</span> Taxa Sucesso</p>
-          </div>
-        </div>
-      </div>
-      <div class="conteudo-imagem">
-        <div class="carrossel">
-          <img src="1 (1).jpg" alt="Foto 1" class="active" />
-          <img src="1 (3).jpg" alt="Foto 3" />
-          <img src="1 (5).jpg" alt="Foto 5" />
-          <img src="1 (6).jpg" alt="Foto 6" />
-          <img src="1 (7).jpg" alt="Foto 7" />
-          <img src="1 (8).jpg" alt="Foto 8" />
-          <img src="1 (9).jpg" alt="Foto 9" />
-
-          <button class="carrossel-controle anterior">&#10094;</button>
-          <button class="carrossel-controle seguinte">&#10095;</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="servicos" class="secao-servicos">
-      <h2 class="titulo-principal">Serviços</h2>
-      <!-- Subtítulo removido -->
-      <div class="grade-servicos">
-        <div class="servico">
-          <h3>Apoio ao Estudo</h3>
-          <p>
-            Espaço orientado para consolidar hábitos de estudo, organização e
-            autonomia escolar.
-          </p>
-        </div>
-        <div class="servico">
-          <h3>Explicações</h3>
-          <p>
-            Apoio personalizado em todas as disciplinas, com explicadores
-            experientes e métodos eficazes, em formato online e presencial.
-          </p>
-        </div>
-        <div class="servico">
-          <h3>Preparação para Exames</h3>
-          <p>
-            Revisão intensiva e prática orientada para exames nacionais, provas
-            de aferição e testes intermédios.
-          </p>
-        </div>
-        <div class="servico">
-          <h3>Traduções</h3>
-          <p>
-            Serviço de tradução de documentos escolares e técnicos, com rigor e
-            qualidade linguística.
-          </p>
-        </div>
-        <div class="servico">
-          <h3>Férias Escolares</h3>
-          <p>
-            Atividades educativas e lúdicas para ocupar as pausas letivas de
-            forma criativa e divertida.
-          </p>
-        </div>
-      </div>
-
-      <!-- Elfsight Google Reviews -->
-      <script
-        src="https://static.elfsight.com/platform/platform.js"
-        async
-      ></script>
-      <div
-        class="elfsight-app-d71066a5-94fa-4558-880d-830c58e14ec5"
-        data-elfsight-app-lazy
-      ></div>
-
-      <div class="botao-orcamento">
-        <button onclick="window.location.href='mailto:adnensinar@gmail.com'">
-          Pedir Orçamento
-        </button>
-      </div>
-    </section>
-
-    <!DOCTYPE html>
-    <html lang="pt">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Secção com Blobs Animados</title>
-        <link rel="stylesheet" href="blobs-section.css" />
-      </head>
-      <body>
-        <section class="secao-animacao">
-          <div class="blobs">
-            <div class="blob blob1">
-              <p>Sumários Detalhados de Cada Sessão</p>
-            </div>
-            <div class="blob blob2">
-              <p>Ambiente de Aprendizagem Sem Distrações</p>
-            </div>
-            <div class="blob blob3">
-              <p>Espaço confortável e inspirador para melhor desempenho</p>
-            </div>
-            <div class="blob blob4">
-              <p>Horários Flexíveis Adaptados às tuas necessidades</p>
-            </div>
-            <div class="blob blob5"><p>Apoio terapêutico disponível</p></div>
-            <div class="blob blob6">
-              <p>Avaliação anual transparente e acessível</p>
-            </div>
-            <div class="blob blob7"><p>Alta Taxa de Sucesso Comprovada</p></div>
-            <!-- Bolhas decorativas (sem texto) -->
-            <div class="blob deco-blob1"></div>
-            <div class="blob deco-blob2"></div>
-            <div class="blob deco-blob3"></div>
-            <div class="blob deco-blob4"></div>
-            <div class="blob deco-blob5"></div>
-            <div class="blob deco-blob6"></div>
-            <div class="blob deco-blob7"></div>
-            <div class="blob deco-blob8"></div>
-          </div>
-          <div class="texto-animado">
-            <h1><strong>O Que Nos Distingue</strong></h1>
-          </div>
-        </section>
-      </body>
-    </html>
-
-    <section class="onde-encontrar" id="onde-encontrar">
-      <h2 class="titulo-principal">Onde Estamos</h2>
-      <div class="encontrar-conteudo">
-        <div class="mapa">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.4130033415445!2d-8.281052223557708!3d41.45195689198693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24efe3c40632a3%3A0x92ec9558af0c403!2sADN%20Ensinar!5e0!3m2!1spt-PT!2spt!4v1746964140706!5m2!1spt-PT!2spt"
-            width="600"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
         </div>
 
-        <div class="info-transporte">
-<p>
-    O nosso Centro de Estudos está estrategicamente localizado para facilitar o acesso de Alunos e Encarregados de Educação. A paragem de autocarro mais próxima encontra-se a apenas 36 metros, garantindo uma ligação prática aos transportes públicos.
-  </p>
-  <p>
-    Nas imediações, existem várias instituições de ensino: a Escola Básica de Cruz de Argola a 350 metros, o Agrupamento de Escolas Santos Simões a 700 metros, e a Escola EB 2,3 João de Meira a cerca de 2,4 km. Estamos também a apenas 1,8 km do centro da cidade de Guimarães.
-  </p>
-          <div class="botao-transporte">
-            <button
-              onclick="window.open('https://gmr.elevensystems.pt/tracking', '_blank')"
-            >
-              Sabe mais sobre como chegar até nós!
+        <div class="conteudo-imagem">
+          <div class="carrossel" data-carousel aria-label="Galeria de fotos">
+            <img src="1 (1).jpg" alt="Espaço ADN Ensinar — Foto 1" class="active" />
+            <img src="1 (3).jpg" alt="Espaço ADN Ensinar — Foto 2" />
+            <img src="1 (5).jpg" alt="Espaço ADN Ensinar — Foto 3" />
+            <img src="1 (6).jpg" alt="Espaço ADN Ensinar — Foto 4" />
+            <img src="1 (7).jpg" alt="Espaço ADN Ensinar — Foto 5" />
+            <img src="1 (8).jpg" alt="Espaço ADN Ensinar — Foto 6" />
+            <img src="1 (9).jpg" alt="Espaço ADN Ensinar — Foto 7" />
+
+            <button class="carrossel-controle anterior" type="button" data-carousel-prev aria-label="Imagem anterior">
+              &#10094;
+            </button>
+            <button class="carrossel-controle seguinte" type="button" data-carousel-next aria-label="Imagem seguinte">
+              &#10095;
             </button>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <!-- Serviços -->
+      <section id="servicos" class="secao-imagem secao-imagem--sala1 secao-servicos">
+        <div class="secao-imagem__inner">
+          <h2 class="titulo-principal">Serviços</h2>
+
+          <div class="grade-servicos">
+            <div class="servico">
+              <h3>Apoio ao Estudo</h3>
+              <p>Espaço orientado para consolidar hábitos de estudo, organização e autonomia escolar.</p>
+            </div>
+
+            <div class="servico">
+              <h3>Explicações</h3>
+              <p>
+                Apoio personalizado em todas as disciplinas, com explicadores experientes e métodos eficazes,
+                em formato online e presencial.
+              </p>
+            </div>
+
+            <div class="servico">
+              <h3>Preparação para Exames</h3>
+              <p>
+                Revisão intensiva e prática orientada para exames nacionais, provas de aferição e testes intermédios.
+              </p>
+            </div>
+
+            <div class="servico">
+              <h3>Traduções</h3>
+              <p>Serviço de tradução de documentos escolares e técnicos, com rigor e qualidade linguística.</p>
+            </div>
+
+            <div class="servico">
+              <h3>Férias Escolares</h3>
+              <p>Atividades educativas e lúdicas para ocupar as pausas letivas de forma criativa e divertida.</p>
+            </div>
+          </div>
+
+          <!-- Elfsight Google Reviews -->
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div class="elfsight-app-d71066a5-94fa-4558-880d-830c58e14ec5" data-elfsight-app-lazy></div>
+
+          <div class="botao-orcamento">
+            <a class="btn btn--light" href="mailto:adnensinar@gmail.com">Pedir Orçamento</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- O que nos distingue (Blobs) -->
+      <section class="secao-animacao" id="distingue" aria-label="O que nos distingue">
+        <div class="texto-animado">
+          <h2>O Que Nos Distingue</h2>
+        </div>
+
+        <div class="blobs" aria-hidden="true">
+          <div class="blob blob1"><p>Sumários Detalhados de Cada Sessão</p></div>
+          <div class="blob blob2"><p>Ambiente de Aprendizagem Sem Distrações</p></div>
+          <div class="blob blob3"><p>Espaço confortável e inspirador para melhor desempenho</p></div>
+          <div class="blob blob4"><p>Horários Flexíveis Adaptados às tuas necessidades</p></div>
+          <div class="blob blob5"><p>Apoio terapêutico disponível</p></div>
+          <div class="blob blob6"><p>Avaliação anual transparente e acessível</p></div>
+          <div class="blob blob7"><p>Alta Taxa de Sucesso Comprovada</p></div>
+
+          <!-- decorativas -->
+          <div class="blob deco-blob1"></div>
+          <div class="blob deco-blob2"></div>
+          <div class="blob deco-blob3"></div>
+          <div class="blob deco-blob4"></div>
+          <div class="blob deco-blob5"></div>
+          <div class="blob deco-blob6"></div>
+          <div class="blob deco-blob7"></div>
+          <div class="blob deco-blob8"></div>
+        </div>
+      </section>
+
+      <!-- Onde Estamos -->
+      <section class="secao-imagem secao-imagem--sala1 onde-encontrar" id="onde-encontrar">
+        <div class="secao-imagem__inner">
+          <h2 class="titulo-principal">Onde Estamos</h2>
+
+          <div class="encontrar-conteudo">
+            <div class="mapa" aria-label="Mapa">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.4130033415445!2d-8.281052223557708!3d41.45195689198693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24efe3c40632a3%3A0x92ec9558af0c403!2sADN%20Ensinar!5e0!3m2!1spt-PT!2spt!4v1746964140706!5m2!1spt-PT!2spt"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa ADN Ensinar"
+              ></iframe>
+            </div>
+
+            <div class="info-transporte">
+              <p>
+                O nosso Centro de Estudos está estrategicamente localizado para facilitar o acesso de Alunos e
+                Encarregados de Educação. A paragem de autocarro mais próxima encontra-se a apenas 36 metros,
+                garantindo uma ligação prática aos transportes públicos.
+              </p>
+              <p>
+                Nas imediações, existem várias instituições de ensino: a Escola Básica de Cruz de Argola a 350 metros,
+                o Agrupamento de Escolas Santos Simões a 700 metros, e a Escola EB 2,3 João de Meira a cerca de 2,4 km.
+                Estamos também a apenas 1,8 km do centro da cidade de Guimarães.
+              </p>
+
+              <div class="botao-transporte">
+                <a
+                  class="btn btn--light"
+                  href="https://gmr.elevensystems.pt/tracking"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Sabe mais sobre como chegar até nós!
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer id="contactos">
       <div class="footer-links">
-        <a href="mailto:adnensinar@gmail.com"
-          ><i class="fas fa-envelope"></i> adnensinar@gmail.com</a
-        >
-        <a
-          href="https://www.google.com/maps/place/ADN+Ensinar/@41.4519569,-8.2810522,17z"
-        >
-          <i class="fas fa-map-marker-alt"></i> Avenida Rio de Janeiro, 20,
-          4810-009, Mesão Frio, Guimarães
+        <a href="mailto:adnensinar@gmail.com"><i class="fas fa-envelope"></i> adnensinar@gmail.com</a>
+        <a href="https://www.google.com/maps/place/ADN+Ensinar/@41.4519569,-8.2810522,17z" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-map-marker-alt"></i> Avenida Rio de Janeiro, 20, 4810-009, Mesão Frio, Guimarães
         </a>
       </div>
 
-      <div class="footer-socials">
-        <a href="https://www.facebook.com/adnensinar/" target="_blank"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a href="https://www.instagram.com/adn.ensinar/" target="_blank"
-          ><i class="fab fa-instagram"></i
-        ></a>
-        <a href="https://www.linkedin.com/company/adn-ensinar/" target="_blank"
-          ><i class="fab fa-linkedin-in"></i
-        ></a>
+      <div class="footer-socials" aria-label="Redes sociais">
+        <a href="https://www.facebook.com/adnensinar/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/adn.ensinar/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/adn-ensinar/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
       </div>
     </footer>
 
-    <!-- JS incluído no fim para garantir funcionamento -->
-    <script src="script.js"></script>
+    <!-- JS -->
+    <script src="script.js" defer></script>
   </body>
 </html>

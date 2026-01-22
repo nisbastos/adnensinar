@@ -1,75 +1,112 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const imagens = document.querySelectorAll('.carrossel img');
-    const anteriorBtn = document.querySelector('.carrossel-controle.anterior');
-    const seguinteBtn = document.querySelector('.carrossel-controle.seguinte');
-    let indexAtual = 0;
+/* ==========================================================================
+   ADN Ensinar — script.js (limpo, modular e tolerante a elementos opcionais)
+   ========================================================================== */
 
-    function mostrarImagem(index) {
-        imagens.forEach((img, i) => {
-            img.classList.remove('active');
-            if (i === index) {
-                img.classList.add('active');
-            }
-        });
-    }
+(() => {
+  "use strict";
 
-    function proximaImagem() {
+  // Helpers
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+  /* =========================
+     1) Carrossel (Sobre Nós)
+     - Suporta múltiplos carrosseis: basta usar data-carousel
+     ========================= */
+  function initCarousels() {
+    const carousels = $$("[data-carousel]");
+
+    carousels.forEach((carousel) => {
+      const imagens = $$("img", carousel);
+      const btnPrev = $("[data-carousel-prev]", carousel);
+      const btnNext = $("[data-carousel-next]", carousel);
+
+      if (!imagens.length) return;
+
+      let indexAtual = imagens.findIndex((img) => img.classList.contains("active"));
+      if (indexAtual < 0) indexAtual = 0;
+
+      const mostrar = (idx) => {
+        imagens.forEach((img, i) => img.classList.toggle("active", i === idx));
+      };
+
+      const proxima = () => {
         indexAtual = (indexAtual + 1) % imagens.length;
-        mostrarImagem(indexAtual);
-    }
+        mostrar(indexAtual);
+      };
 
-    function imagemAnterior() {
+      const anterior = () => {
         indexAtual = (indexAtual - 1 + imagens.length) % imagens.length;
-        mostrarImagem(indexAtual);
-    }
+        mostrar(indexAtual);
+      };
 
-    anteriorBtn.addEventListener('click', imagemAnterior);
-    seguinteBtn.addEventListener('click', proximaImagem);
+      btnPrev?.addEventListener("click", anterior);
+      btnNext?.addEventListener("click", proxima);
 
-    mostrarImagem(indexAtual);
-    setInterval(proximaImagem, 4000);
-});
-// Função para fechar o alerta
-function fecharAlerta() {
-    document.getElementById("alerta").style.display = "none";
-}
+      // autoplay (pausa ao passar o rato)
+      let timer = window.setInterval(proxima, 4000);
 
-// Função para contar o tempo até o dia 30/06
-const deadline = new Date("2025-06-30T23:59:59").getTime();
-const contadorElemento = document.getElementById("contador");
+      carousel.addEventListener("mouseenter", () => window.clearInterval(timer));
+      carousel.addEventListener("mouseleave", () => (timer = window.setInterval(proxima, 4000)));
 
-function atualizarContagem() {
-    const agora = new Date().getTime();
-    const restante = deadline - agora;
+      mostrar(indexAtual);
+    });
+  }
 
-    if (restante <= 0) {
-        clearInterval(intervalo);
-        contadorElemento.textContent = "O tempo acabou!";
-    } else {
-        const dias = Math.floor(restante / (1000 * 60 * 60 * 24));
-        const horas = Math.floor((restante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutos = Math.floor((restante % (1000 * 60 * 60)) / (1000 * 60));
-        const segundos = Math.floor((restante % (1000 * 60)) / 1000);
+  /* =========================
+     2) Alerta (opcional)
+     - Usa data-alert-close
+     ========================= */
+  function initAlertBar() {
+    const closeBtn = $("[data-alert-close]");
+    const alerta = $("#alerta");
+    if (!closeBtn || !alerta) return;
 
-        contadorElemento.textContent = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
-    }
-}
+    closeBtn.addEventListener("click", () => {
+      alerta.style.display = "none";
+    });
+  }
 
-const intervalo = setInterval(atualizarContagem, 1000);
-function fecharBolinha() {
-    var bolinha = document.getElementById("bolinhaAlerta");
-    bolinha.style.display = "none";
-}
+  /* =========================
+     3) Countdown (opcional)
+     - Marca o elemento com id="contador" e data-deadline="YYYY-MM-DDTHH:mm:ss"
+     Ex: <span id="contador" class="contador" data-deadline="2026-06-30T23:59:59"></span>
+     ========================= */
+  function initCountdown() {
+    const contador = $("#contador");
+    if (!contador) return;
 
-  window.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('popupAlerta').style.display = 'block';
+    const raw = contador.getAttribute("data-deadline");
+    if (!raw) return;
+
+    const deadline = new Date(raw).getTime();
+    if (Number.isNaN(deadline)) return;
+
+    const tick = () => {
+      const agora = Date.now();
+      const restante = deadline - agora;
+
+      if (restante <= 0) {
+        contador.textContent = "O tempo acabou!";
+        window.clearInterval(intervalo);
+        return;
+      }
+
+      const dias = Math.floor(restante / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((restante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((restante % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((restante % (1000 * 60)) / 1000);
+
+      contador.textContent = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+    };
+
+    tick();
+    const intervalo = window.setInterval(tick, 1000);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initCarousels();
+    initAlertBar();
+    initCountdown();
   });
-
-  function fecharPopup(event) {
-    event.stopPropagation(); // Evita que clique feche o popup E abra o link
-    document.getElementById('popupAlerta').style.display = 'none';
-  }
-
-  function abrirLink() {
-    window.open('https://teulink.com/oferta-inscricao', '_blank');
-  }
+})();

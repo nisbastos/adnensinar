@@ -27,8 +27,6 @@
    ========================= */
 
 :root {
-  --header-h: 120px;
-
   --font-title: "Bobby Jones", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-body: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
@@ -62,7 +60,6 @@
 
 html,
 body {
-  padding-top: var(--header-h);
   font-family: var(--font-body);
   height: 100%;
 }
@@ -154,11 +151,13 @@ li {
    ========================= */
 
 .site-header {
-  position: fixed;
+  backdrop-filter: blur(6px);
+
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
+position: sticky;
+  top: 0;
+  z-index: 10;
 
   display: flex;
   justify-content: space-around;
@@ -168,7 +167,6 @@ li {
   width: 100%;
 
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
 }
 
 .logo img {
@@ -228,7 +226,7 @@ li {
 
 .hero h1 {
   margin: 20px 0 0;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 300;
 }
 
@@ -642,7 +640,6 @@ footer i {
    ========================= */
 
 @media (max-width: 768px) {
-  :root { --header-h: 170px; }
   .site-header {
     flex-direction: column;
     align-items: center;

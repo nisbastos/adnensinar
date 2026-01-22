@@ -109,25 +109,18 @@
     initAlertBar();
     initCountdown();
   });
+})();
 
-  document.addEventListener("DOMContentLoaded", () => {
-  const logoLink = document.querySelector(".logo-link");
-  if (!logoLink) return;
 
-  logoLink.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const homeUrl = `${window.location.origin}/`;
-
-    // Se já estiver na homepage, força refresh
-    if (window.location.href === homeUrl || window.location.href === homeUrl + "#") {
+// Logo (barra fixa): voltar à homepage / refresh
+document.addEventListener("DOMContentLoaded", () => {
+  const homeLogo = document.querySelector(".floating-top__logo");
+  if (!homeLogo) return;
+  homeLogo.addEventListener("click", (e) => {
+    const home = `${window.location.origin}/`;
+    if (window.location.href === home || window.location.href === home + "#") {
+      e.preventDefault();
       window.location.reload();
-      return;
     }
-
-    // Se estiver noutra secção/página, vai para a homepage
-    window.location.href = homeUrl;
   });
 });
-
-})();

@@ -27,7 +27,8 @@
    ========================= */
 
 :root {
-  --floating-h: 84px;
+  --header-h: 120px;
+
   --font-title: "Bobby Jones", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-body: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
@@ -56,13 +57,12 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
 }
 
 html,
 body {
-  padding-top: var(--floating-h);
-font-family: var(--font-body);
+  padding-top: var(--header-h);
+  font-family: var(--font-body);
   height: 100%;
 }
 
@@ -85,7 +85,6 @@ h3,
 }
 
 
-p,
 a,
 li {
   font-family: var(--font-body);
@@ -139,12 +138,12 @@ li {
 
 
 .btn--dark {
-  background: #565656;
-  color: #ffffff;
+  background: var(--c-dark); /* #565656 */
+  color: var(--c-light);
 }
 .btn--dark:hover {
   background: var(--c-brand-2);
-  color: #ffffff;
+  color: var(--c-light);
 }
 
 
@@ -153,17 +152,21 @@ li {
    ========================= */
 
 .site-header {
-  position: relative;
-  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 
-  padding: 14px 20px;
+  padding: 20px;
   width: 100%;
 
   background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
 }
 
 .logo img {
@@ -190,39 +193,6 @@ li {
   border-radius: 6px;
 }
 
-
-/* =========================
-   Barra fixa (Logótipo + Inscrições)
-   ========================= */
-
-.floating-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 12px 20px;
-  height: var(--floating-h);
-
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
-}
-
-.floating-top__logo img {
-  display: block;
-  max-height: 60px;
-  width: auto;
-}
-
-.floating-top__cta {
-  white-space: nowrap;
-}
-
 /* =========================
    5) Hero
    ========================= */
@@ -245,21 +215,18 @@ li {
 }
 
 .hero__inner {
-  width: min(80vw, 520px);
   position: relative;
   z-index: 1;
 }
 
 .hero__logo img {
-  width: 100%;
-  height: auto;
-  max-height: 260px;
+  max-height: 250px;
+  width: auto;
 }
 
 .hero h1 {
-  margin: 16px 0 0;
-  width: 100%;
-  font-size: clamp(28px, 4.2vw, 52px);
+  margin: 20px 0 0;
+  font-size: 30px;
   font-weight: 300;
 }
 
@@ -292,7 +259,8 @@ li {
 .conteudo-texto p {
   margin: 0 0 20px;
   line-height: 1.6;
-  font-size: var(--fs-body);
+  font-size: 15px;
+  font-weight: lighter;
 }
 
 .conteudo-imagem {
@@ -395,8 +363,7 @@ li {
 .kpi p {
   margin: 0;
   font-size: 1.5rem;
-  font-family: var(--font-title);
-  font-weight: 300;
+  font-family: "Bobby Jones";
 }
 
 /* =========================
@@ -450,7 +417,6 @@ li {
 .servico p {
   margin: 0 0 20px;
   line-height: 1.6;
-  font-size: var(--fs-body);
 }
 
 /* Botões dentro das secções */
@@ -569,18 +535,6 @@ li {
 .info-transporte p {
   margin: 0 0 20px;
   line-height: 1.6;
-  font-size: var(--fs-body);
-}
-
-
-/* Texto de secções (15px, leve) */
-.conteudo-texto p,
-.servico p,
-.info-transporte p,
-.footer-links a {
-  font-family: var(--font-body);
-  font-size: 15px;
-  font-weight: 300;
 }
 
 /* =========================
@@ -603,7 +557,7 @@ footer {
   color: var(--c-light);
   text-decoration: none;
   margin-right: 20px;
-  font-weight: 300;
+  font-weight: bold;
   letter-spacing: 1px;
 }
 .footer-links a:last-child {
@@ -636,7 +590,7 @@ footer i {
   font-size: var(--fs-body);
   padding: 10px;
   width: 100%;
-  font-weight: 300;
+  font-weight: bold;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
 }
@@ -654,7 +608,7 @@ footer i {
 }
 
 .contador {
-  font-weight: 300;
+  font-weight: bold;
   font-size: 15px;
 }
 
@@ -677,7 +631,8 @@ footer i {
 .footer-links,
 .footer-links a {
   font-family: var(--font-body);
-  font-size: var(--fs-body);
+  font-weight: lighter;
+  font-size: 15px;
 }
 
 /* =========================
@@ -685,7 +640,6 @@ footer i {
    ========================= */
 
 @media (max-width: 768px) {
-  :root { --floating-h: 92px; }
   :root { --header-h: 170px; }
   .site-header {
     flex-direction: column;
@@ -703,7 +657,7 @@ footer i {
   }
 
   .hero h1 {
-    font-size: 2rem;
+    font-size: 40px;
   }
 
   .sobre-nos {

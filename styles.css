@@ -89,7 +89,9 @@ h3,
 }
 
 
-p,
+p{
+  font-family: var(--font-title);
+}
 a,
 li {
   font-family: var(--font-body);
@@ -416,6 +418,8 @@ body.has-fixed-cta .header-fixed-group {
 .kpi p,
 .kpi-numero {
   font-family: var(--font-title);
+  color:#ffffff;
+  font-size: 1.5rem;
 }
 .kpi p {
   margin: 0;

@@ -109,4 +109,25 @@
     initAlertBar();
     initCountdown();
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const logoLink = document.querySelector(".logo-link");
+  if (!logoLink) return;
+
+  logoLink.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const homeUrl = `${window.location.origin}/`;
+
+    // Se já estiver na homepage, força refresh
+    if (window.location.href === homeUrl || window.location.href === homeUrl + "#") {
+      window.location.reload();
+      return;
+    }
+
+    // Se estiver noutra secção/página, vai para a homepage
+    window.location.href = homeUrl;
+  });
+});
+
 })();

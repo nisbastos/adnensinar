@@ -417,7 +417,6 @@ li {
 .servico p {
   margin: 0 0 20px;
   line-height: 1.6;
-  font-size: var(--fs-body);
 }
 
 /* Botões dentro das secções */
@@ -536,7 +535,6 @@ li {
 .info-transporte p {
   margin: 0 0 20px;
   line-height: 1.6;
-  font-size: var(--fs-body);
 }
 
 /* =========================
@@ -633,7 +631,8 @@ footer i {
 .footer-links,
 .footer-links a {
   font-family: var(--font-body);
-  font-size: var(--fs-body);
+  font-weight: lighter;
+  font-size: 15px;
 }
 
 /* =========================

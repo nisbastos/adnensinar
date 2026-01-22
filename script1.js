@@ -124,14 +124,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-
-// Fixar apenas logo + Inscrições ao fazer scroll
-document.addEventListener("DOMContentLoaded", () => {
-  const threshold = 10;
-  const onScroll = () => {
-    document.body.classList.toggle("has-fixed-cta", window.scrollY > threshold);
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-});

@@ -719,7 +719,13 @@ footer i {
   font-weight: 300;
 }
 
-.conteudo-texto p,
+.conteudo-texto p {text-decoration: none;
+  margin-right: 20px;
+  font-weight: 300;
+  font-family: var(--font-body);
+  font-size: 15px;
+  letter-spacing: 0.2px;}
+
 .servico p,
 .info-transporte p,
 .footer-links,

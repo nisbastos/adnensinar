@@ -1,0 +1,696 @@
+/* ==========================================================================
+   ADN Ensinar — styles.css (organizado e sem repetição)
+   ========================================================================== */
+
+/* =========================
+   1) Fontes
+   ========================= */
+
+@font-face {
+  font-family: "Bobby Jones";
+  src: url("BobbyJonesSoft-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Assistant";
+  src: url("Assistant-ExtraLight.woff2") format("woff2");
+  font-weight: 200; /* ExtraLight */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   2) Variáveis / Reset base
+   ========================= */
+
+:root {
+  --font-title: "Bobby Jones", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-body: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  --fs-nav: clamp(14px, 1.8vh, 18px);
+  --fs-h2: clamp(22px, 3vh, 34px);
+  --fs-body: clamp(14px, 2vh, 18px);
+
+
+  --c-dark: #565656;
+  --c-light: #ffffff;
+
+  --c-brand-1: #c1dbdc;
+  --c-brand-2: #86a3a9;
+
+  --c-blob-green: #cee3d1;
+  --c-blob-yellow: #ffe7a9;
+  --c-blob-pink: #fbd1c1;
+
+  --shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.2);
+  --radius-lg: 12px;
+
+  --text-base: 2vh;
+  --text-title: 3vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: var(--font-body);
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: url("homepage1.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+h1,
+h2,
+h3,
+.site-header,
+.site-nav a,
+.btn {
+  font-size: var(--fs-nav);
+
+  font-family: var(--font-title);
+}
+
+
+p,
+a,
+li {
+  font-family: var(--font-body);
+}
+
+
+/* Acessibilidade */
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: -999px;
+  background: var(--c-light);
+  color: var(--c-dark);
+  padding: 10px 14px;
+  border-radius: 8px;
+  z-index: 9999;
+}
+.skip-link:focus {
+  top: 10px;
+  left: 10px;
+}
+
+/* =========================
+   3) Componentes (botões)
+   ========================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+
+  font-size: var(--fs-body);
+  line-height: 1;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn--light {
+  background: var(--c-light);
+  color: var(--c-dark);
+}
+.btn--light:hover {
+  background: var(--c-brand-1);
+  color: var(--c-light);
+}
+
+/* =========================
+   4) Header / Navegação
+   ========================= */
+
+.site-header {
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 20px;
+  width: 100%;
+
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.logo img {
+  max-height: 80px;
+  width: auto;
+}
+
+.site-nav {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-grow: 0.8;
+  font-size: var(--fs-nav);
+}
+
+.site-nav a {
+  color: var(--c-light);
+  text-decoration: none;
+  padding: 10px;
+  transition: 0.2s ease;
+}
+.site-nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+}
+
+/* =========================
+   5) Hero
+   ========================= */
+
+.hero {
+  position: relative;
+  min-height: 400px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--c-light);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__logo img {
+  max-height: 250px;
+  width: auto;
+}
+
+.hero h1 {
+  margin: 20px 0 0;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+/* =========================
+   6) Sobre Nós + Carrossel
+   ========================= */
+
+.sobre-nos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;
+  background: var(--c-light);
+  gap: 40px;
+}
+
+.conteudo-texto {
+  flex: 1 1 50%;
+  min-width: 300px;
+  color: var(--c-dark);
+  text-align: justify;
+}
+
+.conteudo-texto h2 {
+  font-size: var(--text-title);
+  font-weight: 300;
+  margin: 0 0 10px;
+}
+
+.conteudo-texto p {
+  margin: 0 0 20px;
+  line-height: 1.6;
+  font-size: var(--fs-body);
+}
+
+.conteudo-imagem {
+  flex: 1 1 40%;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Carrossel */
+.carrossel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carrossel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.carrossel img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.carrossel-controle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(86, 86, 86, 0.6);
+  border: none;
+  color: var(--c-light);
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+.carrossel-controle:hover {
+  background: rgba(86, 86, 86, 0.9);
+}
+.carrossel-controle.anterior {
+  left: 10px;
+}
+.carrossel-controle.seguinte {
+  right: 10px;
+}
+
+/* KPIs */
+.kpis {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 30px;
+  flex-wrap: nowrap;
+}
+
+.kpi {
+  width: 190px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: var(--c-brand-1);
+  color: var(--c-light);
+
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  cursor: default;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.kpi:hover {
+  background: var(--c-brand-2);
+  transform: scale(1.1);
+}
+
+.kpi-numero {
+  display: none;
+  font-size: 1.5rem;
+}
+
+.kpi:hover .kpi-numero {
+  display: inline;
+}
+
+.kpi p {
+  margin: 0;
+  font-size: 1.5rem;
+  font-family: "Bobby Jones";
+}
+
+/* =========================
+   7) Secções com imagem + overlay
+   ========================= */
+
+.secao-imagem {
+  position: relative;
+  padding: 80px 10% 60px;
+  color: var(--c-light);
+}
+
+.secao-imagem--sala1 {
+  background: url("sala1.jpg") center / cover no-repeat;
+}
+
+/* Overlay escuro para garantir legibilidade */
+.secao-imagem::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.secao-imagem__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.titulo-principal {
+  font-size: var(--text-title);
+  font-weight: 300;
+  margin: 0 0 20px;
+}
+
+/* Serviços */
+.grade-servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  text-align: left;
+}
+
+.servico h3 {
+  font-size: var(--fs-body);
+  font-weight: 300;
+  margin: 0 0 10px;
+}
+
+.servico p {
+  margin: 0 0 20px;
+  line-height: 1.6;
+  font-size: var(--fs-body);
+}
+
+/* Botões dentro das secções */
+.botao-orcamento,
+.botao-transporte {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* =========================
+   8) Blobs (O que nos distingue)
+   ========================= */
+
+.secao-animacao {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  background: var(--c-light);
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.texto-animado {
+  position: absolute;
+  top: 30px;
+  left: 200px;
+  z-index: 5;
+  text-align: left;
+}
+
+.texto-animado h2 {
+  margin: 0;
+  font-size: var(--text-title);
+  color: var(--c-dark);
+  font-weight: 300;
+}
+
+.blobs {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.85;
+
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  padding: 20px;
+  font-size: 2.5vh;
+  font-family: "Bobby Jones";
+  font-weight: 300;
+  color: var(--c-light);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+
+  animation: float 10s ease-in-out infinite;
+}
+
+/* Blobs com texto */
+.blob1 { width: 250px; height: 250px; background: var(--c-blob-green); top: 50%; left: 10%; }
+.blob2 { width: 230px; height: 230px; background: var(--c-blob-yellow); top: 50%; left: 30%; }
+.blob3 { width: 260px; height: 260px; background: var(--c-blob-pink); top: 50%; right: 10%; }
+.blob4 { width: 200px; height: 200px; background: var(--c-dark); bottom: 50%; right: 20%; }
+.blob5 { width: 160px; height: 160px; background: var(--c-brand-1); top: 50%; left: 50%; }
+.blob6 { width: 180px; height: 180px; background: var(--c-blob-pink); bottom: 50%; left: 25%; }
+.blob7 { width: 140px; height: 140px; background: var(--c-blob-green); bottom: 50%; right: 35%; }
+
+/* Blobs decorativos sem texto */
+.deco-blob1 { width: 120px; height: 120px; background: var(--c-blob-green); top: 10%; left: 5%; opacity: 0.4; }
+.deco-blob2 { width: 180px; height: 180px; background: var(--c-blob-pink); top: 30%; right: 15%; opacity: 0.4; }
+.deco-blob3 { width: 160px; height: 160px; background: var(--c-brand-1); bottom: 50%; left: 15%; opacity: 0.4; }
+.deco-blob4 { width: 140px; height: 140px; background: var(--c-blob-yellow); bottom: 10%; right: 30%; opacity: 0.4; }
+.deco-blob5 { width: 200px; height: 200px; background: var(--c-brand-1); top: 15%; right: 45%; opacity: 0.4; }
+.deco-blob6 { width: 180px; height: 180px; background: var(--c-blob-green); bottom: 20%; left: 30%; opacity: 0.4; }
+.deco-blob7 { width: 140px; height: 140px; background: var(--c-blob-pink); top: 25%; right: 40%; opacity: 0.4; }
+.deco-blob8 { width: 160px; height: 160px; background: var(--c-dark); bottom: 25%; right: 25%; opacity: 0.4; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* =========================
+   9) Onde Estamos
+   ========================= */
+
+.onde-encontrar {
+  text-align: justify;
+}
+
+.encontrar-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.mapa,
+.info-transporte {
+  flex: 1 1 45%;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+}
+
+.info-transporte p {
+  margin: 0 0 20px;
+  line-height: 1.6;
+  font-size: var(--fs-body);
+}
+
+/* =========================
+   10) Footer
+   ========================= */
+
+footer {
+  background: var(--c-dark);
+  color: var(--c-light);
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+  font-size: var(--fs-body);
+}
+
+.footer-links a {
+  color: var(--c-light);
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.footer-links a:last-child {
+  margin-right: 0;
+}
+
+.footer-socials a {
+  color: var(--c-light);
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: var(--fs-body);
+  transition: opacity 0.2s ease;
+}
+.footer-socials a:hover {
+  opacity: 0.8;
+}
+
+footer i {
+  margin-right: 6px;
+}
+
+/* =========================
+   11) (Opcional) Alertas / Countdown
+   ========================= */
+
+.alerta {
+  background: var(--c-brand-1);
+  color: var(--c-dark);
+  text-align: center;
+  font-size: var(--fs-body);
+  padding: 10px;
+  width: 100%;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.alerta__fechar {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  background: transparent;
+  border: 0;
+  color: var(--c-dark);
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.contador {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+
+/* =========================
+   Tipografia uniforme (títulos e textos)
+   ========================= */
+
+.conteudo-texto h2,
+.titulo-principal,
+.texto-animado h2 {
+  font-family: var(--font-title);
+  font-size: var(--fs-h2);
+  font-weight: 300;
+}
+
+.conteudo-texto p,
+.servico p,
+.info-transporte p,
+.footer-links,
+.footer-links a {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+}
+
+/* =========================
+   12) Responsivo
+   ========================= */
+
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .site-nav {
+  font-size: var(--fs-nav);
+
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .sobre-nos {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .conteudo-texto,
+  .conteudo-imagem {
+    width: 100%;
+  }
+
+  .kpis {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .kpi {
+    width: 150px;
+  }
+
+  .grade-servicos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .encontrar-conteudo {
+    flex-direction: column;
+  }
+
+  .mapa iframe {
+    height: 300px;
+  }
+
+  .texto-animado {
+    left: 20px;
+    right: 20px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  /* Evitar zoom ao tocar em inputs (caso uses no futuro) */
+  input,
+  button,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}

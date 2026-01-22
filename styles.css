@@ -135,12 +135,28 @@ li {
   color: var(--c-light);
 }
 
+
+.btn--dark {
+  background: var(--c-dark); /* #565656 */
+  color: var(--c-light);
+}
+.btn--dark:hover {
+  background: var(--c-brand-2);
+  color: var(--c-light);
+}
+
+
 /* =========================
    4) Header / Navegação
    ========================= */
 
 .site-header {
-  position: relative;
+  backdrop-filter: blur(6px);
+
+  position: sticky;
+  top: 0;
+position: sticky;
+  top: 0;
   z-index: 10;
 
   display: flex;

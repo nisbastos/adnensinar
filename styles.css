@@ -575,6 +575,8 @@ a {
    ========================= */
 
 .distingue {
+  position: relative;
+  overflow: hidden;
   margin-top: 70px;
   background: var(--c-light);
   border-radius: var(--radius-xl);
@@ -582,12 +584,36 @@ a {
 }
 
 .subtitulo-secao {
+  position: relative;
+  z-index: 2;
   font-size: var(--fs-h3);
   color: var(--c-dark);
   margin: 0 0 30px;
 }
 
+.distingue__deco {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.distingue-deco {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.28;
+}
+
+.distingue-deco--green { background: var(--c-blob-green); }
+.distingue-deco--yellow { background: var(--c-blob-yellow); }
+.distingue-deco--pink { background: var(--c-blob-pink); }
+
 .distingue__grid {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

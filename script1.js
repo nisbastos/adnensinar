@@ -1,126 +1,410 @@
-/* ==========================================================================
-   ADN Ensinar — script.js (limpo, modular e tolerante a elementos opcionais)
-   ========================================================================== */
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-(() => {
-  "use strict";
+    <title>ADN Ensinar | Centro de Estudos</title>
+    <link rel="icon" type="image/png" href="icon2.png" />
+    <meta
+      name="description"
+      content="ADN Ensinar — Centro de Estudos em Guimarães. Apoio ao estudo, explicações e preparação para exames."
+    />
 
-  // Helpers
-  const $ = (sel, root = document) => root.querySelector(sel);
-  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+    <!-- Fonts / Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-  /* =========================
-     1) Carrossel (Sobre Nós)
-     - Suporta múltiplos carrosseis: basta usar data-carousel
-     ========================= */
-  function initCarousels() {
-    const carousels = $$("[data-carousel]");
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-    carousels.forEach((carousel) => {
-      const imagens = $$("img", carousel);
-      const btnPrev = $("[data-carousel-prev]", carousel);
-      const btnNext = $("[data-carousel-next]", carousel);
+  <body>
+    <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
 
-      if (!imagens.length) return;
+    <!-- Cabeçalho -->
+    <header class="site-header" id="topo" data-header>
+      <div class="header-inner">
+        <a class="logo-link" href="#topo" aria-label="ADN Ensinar — voltar ao início">
+          <span class="logo-badge" aria-hidden="true"><i class="fa-solid fa-dna"></i></span>
+          <span class="logo-text">
+            <span class="logo-title">ADN Ensinar</span>
+            <span class="logo-tag">Centro de Estudos • Guimarães</span>
+          </span>
+        </a>
 
-      let indexAtual = imagens.findIndex((img) => img.classList.contains("active"));
-      if (indexAtual < 0) indexAtual = 0;
+        <nav class="site-nav" aria-label="Menu principal" data-site-nav>
+          <a href="#topo">Início</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#testemunhos">Testemunhos</a>
+          <a href="#contactos">Contactos</a>
+        </nav>
 
-      const mostrar = (idx) => {
-        imagens.forEach((img, i) => img.classList.toggle("active", i === idx));
-      };
+        <div class="header-actions">
+          <a
+            class="btn btn--dark header-cta"
+            href="https://forms.gle/CL5iM1JVUFEiWNBu5"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Inscreve-te!
+          </a>
 
-      const proxima = () => {
-        indexAtual = (indexAtual + 1) % imagens.length;
-        mostrar(indexAtual);
-      };
+          <button
+            class="nav-toggle"
+            type="button"
+            data-nav-toggle
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="menu-principal"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
 
-      const anterior = () => {
-        indexAtual = (indexAtual - 1 + imagens.length) % imagens.length;
-        mostrar(indexAtual);
-      };
+    <main id="conteudo">
+      <!-- Hero -->
+      <section class="hero" aria-label="ADN Ensinar">
+        <div class="hero__inner">
+          <p class="eyebrow">Explicações • Apoio ao Estudo • Exames</p>
+          <h1>O Teu Potencial<br />Começa Aqui!</h1>
+          <p class="hero__lead">
+            Explicações personalizadas, apoio ao estudo e preparação para exames.<br class="quebra-desktop" />
+            Presencial e online — à medida de cada aluno.
+          </p>
 
-      btnPrev?.addEventListener("click", anterior);
-      btnNext?.addEventListener("click", proxima);
+          <div class="hero__ctas">
+            <a
+              class="btn btn--brand"
+              href="https://forms.gle/CL5iM1JVUFEiWNBu5"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Marca uma Sessão Experimental Grátis!
+            </a>
+            <a class="btn btn--outline-light" href="#sobre">Sobre Nós</a>
+          </div>
+        </div>
 
-      // autoplay (pausa ao passar o rato)
-      let timer = window.setInterval(proxima, 4000);
+        <svg class="hero__wave" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,40 C220,110 420,0 720,40 C1020,80 1220,10 1440,50 L1440,110 L0,110 Z"></path>
+        </svg>
+      </section>
 
-      carousel.addEventListener("mouseenter", () => window.clearInterval(timer));
-      carousel.addEventListener("mouseleave", () => (timer = window.setInterval(proxima, 4000)));
+      <!-- Sobre Nós -->
+      <section class="sobre" id="sobre">
+        <div class="sobre__texto">
+          <h2>Sobre o<br />ADN Ensinar</h2>
+          <p>
+            Somos um centro de estudos localizado em Guimarães, dedicado a proporcionar um
+            acompanhamento educativo de excelência. Com uma equipa dedicada e um ambiente
+            acolhedor, oferecemos apoio ao estudo, explicações personalizadas e preparação para
+            exames em instalações modernas, pensadas para inspirar confiança e sucesso académico.
+          </p>
+          <p>
+            A nossa missão é promover o gosto pela aprendizagem, a autonomia e o pensamento
+            crítico, trabalhando lado a lado com Alunos e Encarregados de Educação para garantir
+            um acompanhamento pedagógico de excelência.
+          </p>
+          <a class="link-seta" href="#servicos">
+            Conhece os nossos serviços <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
 
-      mostrar(indexAtual);
-    });
-  }
+        <div class="sobre__stats" aria-label="Números do ADN Ensinar">
+          <div class="stat-blob stat-blob--green">
+            <span class="stat-num">+70</span>
+            <span class="stat-label">alunos acompanhados</span>
+          </div>
+          <div class="stat-blob stat-blob--yellow">
+            <span class="stat-num">98%</span>
+            <span class="stat-label">taxa de sucesso</span>
+          </div>
+          <div class="stat-blob stat-blob--pink">
+            <span class="stat-num">+15</span>
+            <span class="stat-label">professores qualificados</span>
+          </div>
+          <div class="stat-blob stat-blob--blue">
+            <span class="stat-num">2023</span>
+            <span class="stat-label">fundados em</span>
+          </div>
+        </div>
+      </section>
 
-  /* =========================
-     2) Alerta (opcional)
-     - Usa data-alert-close
-     ========================= */
-  function initAlertBar() {
-    const closeBtn = $("[data-alert-close]");
-    const alerta = $("#alerta");
-    if (!closeBtn || !alerta) return;
+      <!-- Serviços -->
+      <section class="servicos" id="servicos">
+        <div class="servicos__inner">
+          <h2 class="titulo-secao">Os Nossos<br />Serviços</h2>
 
-    closeBtn.addEventListener("click", () => {
-      alerta.style.display = "none";
-    });
-  }
+          <div class="servicos__grid">
+            <article class="servico-card servico-card--offset">
+              <span class="servico-icon"><i class="fa-solid fa-book-open"></i></span>
+              <h3>Apoio ao Estudo</h3>
+              <p>
+                Espaço orientado para consolidar hábitos de estudo, organização e autonomia
+                escolar. Instalações modernas e ambiente acolhedor.
+              </p>
+            </article>
 
-  /* =========================
-     3) Countdown (opcional)
-     - Marca o elemento com id="contador" e data-deadline="YYYY-MM-DDTHH:mm:ss"
-     Ex: <span id="contador" class="contador" data-deadline="2026-06-30T23:59:59"></span>
-     ========================= */
-  function initCountdown() {
-    const contador = $("#contador");
-    if (!contador) return;
+            <article class="servico-card">
+              <span class="servico-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+              <h3>Explicações</h3>
+              <p>
+                Acompanhamento personalizado em todas as disciplinas. Método eficaz com
+                explicadores experientes, em formato online e presencial.
+              </p>
+            </article>
 
-    const raw = contador.getAttribute("data-deadline");
-    if (!raw) return;
+            <article class="servico-card servico-card--offset">
+              <span class="servico-icon"><i class="fa-solid fa-bullseye"></i></span>
+              <h3>Preparação para Exames</h3>
+              <p>
+                Revisão intensiva e prática orientada para exames nacionais, provas de aferição e
+                testes intermédios. Simulações e resolução de provas.
+              </p>
+            </article>
 
-    const deadline = new Date(raw).getTime();
-    if (Number.isNaN(deadline)) return;
+            <article class="servico-card">
+              <span class="servico-icon"><i class="fa-solid fa-language"></i></span>
+              <h3>Traduções</h3>
+              <p>
+                Serviço de tradução de documentos escolares e técnicos, com rigor e qualidade
+                linguística.
+              </p>
+            </article>
 
-    const tick = () => {
-      const agora = Date.now();
-      const restante = deadline - agora;
+            <article class="servico-card servico-card--offset">
+              <span class="servico-icon"><i class="fa-solid fa-umbrella-beach"></i></span>
+              <h3>Férias Escolares</h3>
+              <p>Atividades educativas e lúdicas para ocupar as pausas letivas de forma criativa e divertida.</p>
+            </article>
+          </div>
 
-      if (restante <= 0) {
-        contador.textContent = "O tempo acabou!";
-        window.clearInterval(intervalo);
-        return;
-      }
+          <div class="botao-orcamento">
+            <a class="btn btn--dark" href="mailto:adnensinar@gmail.com">Pedir Orçamento</a>
+          </div>
+        </div>
 
-      const dias = Math.floor(restante / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((restante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((restante % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((restante % (1000 * 60)) / 1000);
+        <svg class="servicos__wave" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,60 C240,0 480,100 720,60 C960,20 1200,90 1440,40 L1440,110 L0,110 Z"></path>
+        </svg>
+      </section>
 
-      contador.textContent = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
-    };
+      <!-- O Que Nos Distingue -->
+      <section class="secao-animacao" id="distingue" aria-label="O que nos distingue">
+        <div class="texto-animado">
+          <h2>O Que Nos<br />Distingue</h2>
+        </div>
 
-    tick();
-    const intervalo = window.setInterval(tick, 1000);
-  }
+        <div class="blobs" aria-hidden="true">
+          <div class="blob blob1"><p>Sumários Detalhados de Cada Sessão</p></div>
+          <div class="blob blob2"><p>Ambiente de Aprendizagem Sem Distrações</p></div>
+          <div class="blob blob3"><p>Espaço confortável e inspirador para melhor desempenho</p></div>
+          <div class="blob blob4"><p>Horários Flexíveis Adaptados às tuas necessidades</p></div>
+          <div class="blob blob5"><p>Apoio terapêutico disponível</p></div>
+          <div class="blob blob6"><p>Avaliação anual transparente e acessível</p></div>
+          <div class="blob blob7"><p>Alta Taxa de Sucesso Comprovada</p></div>
 
-  document.addEventListener("DOMContentLoaded", () => {
-    initCarousels();
-    initAlertBar();
-    initCountdown();
-  });
-})();
+          <!-- decorativas -->
+          <div class="blob deco-blob1"></div>
+          <div class="blob deco-blob2"></div>
+          <div class="blob deco-blob3"></div>
+          <div class="blob deco-blob4"></div>
+          <div class="blob deco-blob5"></div>
+          <div class="blob deco-blob6"></div>
+          <div class="blob deco-blob7"></div>
+          <div class="blob deco-blob8"></div>
+        </div>
+      </section>
 
+      <!-- Testemunhos -->
+      <section class="testemunhos" id="testemunhos">
+        <p class="testemunhos__marca" aria-hidden="true">TESTEMUNHOS</p>
 
-// Logo (barra fixa): voltar à homepage / refresh
-document.addEventListener("DOMContentLoaded", () => {
-  const homeLogo = document.querySelector(".floating-top__logo");
-  if (!homeLogo) return;
-  homeLogo.addEventListener("click", (e) => {
-    const home = `${window.location.origin}/`;
-    if (window.location.href === home || window.location.href === home + "#") {
-      e.preventDefault();
-      window.location.reload();
-    }
-  });
-});
+        <div class="testemunhos__inner">
+          <h2 class="titulo-secao">O Que Dizem<br />de Nós</h2>
+
+          <div class="testemunhos__grid">
+            <blockquote class="testemunho">
+              <p>
+                “Equipa impecável, sempre atentos e interessados no melhor desempenho dos alunos.
+                Recomendo! Nota 10!! Obrigada!!”
+              </p>
+              <footer>
+                <cite>Raquel Castro</cite>
+                <span class="estrelas" aria-label="5 de 5 estrelas">★★★★★</span>
+              </footer>
+            </blockquote>
+
+            <blockquote class="testemunho">
+              <p>
+                “O curso cumpre com os seus objetivos de trazer o conforto e proporcionar ótimos
+                professores aos seus alunos. Com certeza é um lugar muito especial.”
+              </p>
+              <footer>
+                <cite>Jaqueline Rosa</cite>
+                <span class="estrelas" aria-label="5 de 5 estrelas">★★★★★</span>
+              </footer>
+            </blockquote>
+          </div>
+
+          <!-- Elfsight Google Reviews -->
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div class="elfsight-app-d71066a5-94fa-4558-880d-830c58e14ec5" data-elfsight-app-lazy></div>
+        </div>
+      </section>
+
+      <!-- Contactos -->
+      <section class="contactos" id="contactos">
+        <div class="contactos__inner">
+          <h2 class="titulo-secao titulo-secao--escuro">Contactos</h2>
+          <p class="contactos__lead">
+            Estamos estrategicamente localizados para facilitar o acesso de Alunos e Encarregados
+            de Educação. Fala connosco ou visita-nos em Guimarães.
+          </p>
+
+          <div class="contactos__grid">
+            <div class="contactos__info">
+              <ul class="lista-contactos">
+                <li>
+                  <a href="mailto:adnensinar@gmail.com">
+                    <i class="fas fa-envelope" aria-hidden="true"></i> adnensinar@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+351253714911">
+                    <i class="fas fa-phone" aria-hidden="true"></i> 253 714 911
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.google.com/maps/place/ADN+Ensinar/@41.4519569,-8.2810522,17z"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    Avenida Rio de Janeiro, 20, 4810-009, Mesão Frio, Guimarães
+                  </a>
+                </li>
+              </ul>
+
+              <div class="acessos">
+                <h3>Como Chegar</h3>
+                <p>
+                  A paragem de autocarro mais próxima encontra-se a apenas 36 metros, garantindo
+                  uma ligação prática aos transportes públicos.
+                </p>
+                <p>
+                  Nas imediações existem várias instituições de ensino: a Escola Básica de Cruz de
+                  Argola a 350 metros, o Agrupamento de Escolas Santos Simões a 700 metros, e a
+                  Escola EB 2,3 João de Meira a cerca de 2,4 km. Estamos também a apenas 1,8 km do
+                  centro da cidade de Guimarães.
+                </p>
+              </div>
+
+              <a
+                class="btn btn--brand"
+                href="https://gmr.elevensystems.pt/tracking"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Sabe Mais Sobre Transportes
+              </a>
+            </div>
+
+            <div class="mapa" aria-label="Mapa">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.4130033415445!2d-8.281052223557708!3d41.45195689198693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24efe3c40632a3%3A0x92ec9558af0c403!2sADN%20Ensinar!5e0!3m2!1spt-PT!2spt!4v1746964140706!5m2!1spt-PT!2spt"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa ADN Ensinar"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="rodape">
+      <div class="footer__inner">
+        <div class="footer__col footer__marca">
+          <span class="logo-badge logo-badge--footer" aria-hidden="true"><i class="fa-solid fa-dna"></i></span>
+          <p class="footer__nome">ADN Ensinar</p>
+          <p class="footer__tag">Centro de Estudos • Guimarães</p>
+
+          <div class="footer-socials" aria-label="Redes sociais">
+            <a href="https://www.facebook.com/adnensinar/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/adn.ensinar/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/adn-ensinar/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__col" aria-label="Links rápidos">
+          <h4>Navegação</h4>
+          <a href="#topo">Início</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#testemunhos">Testemunhos</a>
+          <a href="#contactos">Contactos</a>
+        </nav>
+
+        <div class="footer__col">
+          <h4>Junta-te a Nós</h4>
+          <a
+            class="btn btn--light footer__btn"
+            href="https://forms.gle/CL5iM1JVUFEiWNBu5"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Inscreve-te!
+          </a>
+          <a class="footer__link-simples" href="mailto:adnensinar@gmail.com?subject=Candidatura%20Espont%C3%A2nea">
+            Queres fazer parte da equipa?
+          </a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contactos</h4>
+          <a href="mailto:adnensinar@gmail.com"><i class="fas fa-envelope"></i> adnensinar@gmail.com</a>
+          <a href="tel:+351253714911"><i class="fas fa-phone"></i> 253 714 911</a>
+          <a
+            href="https://www.google.com/maps/place/ADN+Ensinar/@41.4519569,-8.2810522,17z"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fas fa-map-marker-alt"></i> Av. Rio de Janeiro, 20, 4810-009, Guimarães
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span data-ano>2026</span> ADN Ensinar — Centro de Estudos. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js" defer></script>
+  </body>
+</html>

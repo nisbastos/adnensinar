@@ -10,7 +10,7 @@
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   /* =========================
-     1) Carrossel (Sobre Nós)
+     1) Carrossel (opcional)
      - Suporta múltiplos carrosseis: basta usar data-carousel
      ========================= */
   function initCarousels() {
@@ -43,7 +43,6 @@
       btnPrev?.addEventListener("click", anterior);
       btnNext?.addEventListener("click", proxima);
 
-      // autoplay (pausa ao passar o rato)
       let timer = window.setInterval(proxima, 4000);
 
       carousel.addEventListener("mouseenter", () => window.clearInterval(timer));
@@ -70,7 +69,6 @@
   /* =========================
      3) Countdown (opcional)
      - Marca o elemento com id="contador" e data-deadline="YYYY-MM-DDTHH:mm:ss"
-     Ex: <span id="contador" class="contador" data-deadline="2026-06-30T23:59:59"></span>
      ========================= */
   function initCountdown() {
     const contador = $("#contador");
@@ -104,34 +102,63 @@
     const intervalo = window.setInterval(tick, 1000);
   }
 
+  /* =========================
+     4) Menu de navegação (mobile)
+     ========================= */
+  function initNavToggle() {
+    const toggle = $("[data-nav-toggle]");
+    const nav = $("[data-site-nav]");
+    if (!toggle || !nav) return;
+
+    const closeMenu = () => {
+      document.body.classList.remove("nav-open");
+      toggle.setAttribute("aria-expanded", "false");
+    };
+
+    toggle.addEventListener("click", () => {
+      const isOpen = document.body.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    // Fecha o menu ao escolher uma ligação
+    $$("a", nav).forEach((link) => link.addEventListener("click", closeMenu));
+
+    // Fecha o menu com a tecla Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+  }
+
+  /* =========================
+     5) Sombra do cabeçalho ao fazer scroll
+     ========================= */
+  function initHeaderShadow() {
+    const header = $("[data-header]");
+    if (!header) return;
+
+    const threshold = 10;
+    const onScroll = () => {
+      header.classList.toggle("is-scrolled", window.scrollY > threshold);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* =========================
+     6) Ano no rodapé
+     ========================= */
+  function initFooterYear() {
+    $$("[data-ano]").forEach((el) => {
+      el.textContent = String(new Date().getFullYear());
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     initCarousels();
     initAlertBar();
     initCountdown();
+    initNavToggle();
+    initHeaderShadow();
+    initFooterYear();
   });
 })();
-
-
-// Logo (barra fixa): voltar à homepage / refresh
-document.addEventListener("DOMContentLoaded", () => {
-  const homeLogo = document.querySelector(".floating-top__logo");
-  if (!homeLogo) return;
-  homeLogo.addEventListener("click", (e) => {
-    const home = `${window.location.origin}/`;
-    if (window.location.href === home || window.location.href === home + "#") {
-      e.preventDefault();
-      window.location.reload();
-    }
-  });
-});
-
-
-// Fixar apenas logo + Inscrições ao fazer scroll
-document.addEventListener("DOMContentLoaded", () => {
-  const threshold = 10;
-  const onScroll = () => {
-    document.body.classList.toggle("has-fixed-cta", window.scrollY > threshold);
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-});

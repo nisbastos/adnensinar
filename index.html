@@ -33,7 +33,7 @@
     <!-- Cabeçalho -->
     <header class="site-header" id="topo" data-header>
       <div class="header-inner">
-        <a class="logo-link" href="#topo" aria-label="ADN Ensinar — voltar ao início">
+        <a class="logo-link" href="#inicio" aria-label="ADN Ensinar — voltar ao início">
           <img class="logo-badge" src="redondo.png" alt="Logótipo ADN Ensinar" />
           <span class="logo-text">
             <span class="logo-title">ADN Ensinar</span>
@@ -42,7 +42,7 @@
         </a>
 
         <nav class="site-nav" aria-label="Menu principal" data-site-nav>
-          <a href="#topo">Início</a>
+          <a href="#inicio">Início</a>
           <a href="#sobre">Sobre</a>
           <a href="#servicos">Serviços</a>
           <a href="#testemunhos">Testemunhos</a>
@@ -75,7 +75,7 @@
 
     <main id="conteudo">
       <!-- Hero -->
-      <section class="hero" aria-label="ADN Ensinar">
+      <section class="hero" id="inicio" aria-label="ADN Ensinar">
         <div class="hero__inner">
           <p class="eyebrow">Explicações • Apoio ao Estudo • Exames</p>
           <h1>O Teu Potencial<br />Começa Aqui!</h1>
@@ -100,7 +100,7 @@
       <!-- Sobre Nós -->
       <section class="sobre" id="sobre">
         <div class="sobre__texto">
-          <h2>Sobre o<br />ADN Ensinar</h2>
+          <h2>Sobre</h2>
           <p>
             Somos um centro de estudos localizado em Guimarães, dedicado a proporcionar um
             acompanhamento educativo de excelência. Com uma equipa dedicada e um ambiente
@@ -140,7 +140,7 @@
       <!-- Serviços -->
       <section class="servicos" id="servicos">
         <div class="servicos__inner">
-          <h2 class="titulo-secao">Os Nossos<br />Serviços</h2>
+          <h2 class="titulo-secao">Serviços</h2>
 
           <div class="servicos__grid">
             <article class="servico-card">
@@ -189,6 +189,34 @@
             </article>
           </div>
 
+          <div class="distingue" id="distingue">
+            <h3 class="subtitulo-secao">O Que Nos Distingue</h3>
+
+            <div class="distingue__grid">
+              <div class="distingue-blob distingue-blob--green distingue-blob--md">
+                <p>Sumários Detalhados de Cada Sessão</p>
+              </div>
+              <div class="distingue-blob distingue-blob--yellow distingue-blob--lg">
+                <p>Ambiente de Aprendizagem Sem Distrações</p>
+              </div>
+              <div class="distingue-blob distingue-blob--pink distingue-blob--lg">
+                <p>Espaço Confortável e Inspirador para Melhor Desempenho</p>
+              </div>
+              <div class="distingue-blob distingue-blob--dark distingue-blob--lg">
+                <p>Horários Flexíveis Adaptados às Tuas Necessidades</p>
+              </div>
+              <div class="distingue-blob distingue-blob--green distingue-blob--sm">
+                <p>Apoio Terapêutico Disponível</p>
+              </div>
+              <div class="distingue-blob distingue-blob--yellow distingue-blob--md">
+                <p>Avaliação Anual Transparente e Acessível</p>
+              </div>
+              <div class="distingue-blob distingue-blob--pink distingue-blob--md">
+                <p>Alta Taxa de Sucesso Comprovada</p>
+              </div>
+            </div>
+          </div>
+
           <div class="botao-orcamento">
             <a class="btn btn--dark" href="mailto:adnensinar@gmail.com">Pedir Orçamento</a>
           </div>
@@ -199,39 +227,12 @@
         </svg>
       </section>
 
-      <!-- O Que Nos Distingue -->
-      <section class="secao-animacao" id="distingue" aria-label="O que nos distingue">
-        <div class="texto-animado">
-          <h2>O Que Nos<br />Distingue</h2>
-        </div>
-
-        <div class="blobs" aria-hidden="true">
-          <div class="blob blob1"><p>Sumários Detalhados de Cada Sessão</p></div>
-          <div class="blob blob2"><p>Ambiente de Aprendizagem Sem Distrações</p></div>
-          <div class="blob blob3"><p>Espaço confortável e inspirador para melhor desempenho</p></div>
-          <div class="blob blob4"><p>Horários Flexíveis Adaptados às tuas necessidades</p></div>
-          <div class="blob blob5"><p>Apoio terapêutico disponível</p></div>
-          <div class="blob blob6"><p>Avaliação anual transparente e acessível</p></div>
-          <div class="blob blob7"><p>Alta Taxa de Sucesso Comprovada</p></div>
-
-          <!-- decorativas -->
-          <div class="blob deco-blob1"></div>
-          <div class="blob deco-blob2"></div>
-          <div class="blob deco-blob3"></div>
-          <div class="blob deco-blob4"></div>
-          <div class="blob deco-blob5"></div>
-          <div class="blob deco-blob6"></div>
-          <div class="blob deco-blob7"></div>
-          <div class="blob deco-blob8"></div>
-        </div>
-      </section>
-
       <!-- Testemunhos -->
       <section class="testemunhos" id="testemunhos">
         <p class="testemunhos__marca" aria-hidden="true">TESTEMUNHOS</p>
 
         <div class="testemunhos__inner">
-          <h2 class="titulo-secao">O Que Dizem<br />Sobre Nós</h2>
+          <h2 class="titulo-secao">Testemunhos</h2>
 
           <!-- Elfsight Google Reviews -->
           <script src="https://static.elfsight.com/platform/platform.js" async></script>
@@ -315,21 +316,23 @@
 
       <!-- Galeria -->
       <section class="galeria" id="galeria" aria-label="Galeria de fotos">
-        <div class="carrossel" data-carousel aria-label="Galeria de fotos do ADN Ensinar">
-          <img src="1 (1).jpg" alt="Espaço ADN Ensinar — Foto 1" class="active" />
-          <img src="1 (3).jpg" alt="Espaço ADN Ensinar — Foto 2" />
-          <img src="1 (5).jpg" alt="Espaço ADN Ensinar — Foto 3" />
-          <img src="1 (6).jpg" alt="Espaço ADN Ensinar — Foto 4" />
-          <img src="1 (7).jpg" alt="Espaço ADN Ensinar — Foto 5" />
-          <img src="1 (8).jpg" alt="Espaço ADN Ensinar — Foto 6" />
-          <img src="1 (9).jpg" alt="Espaço ADN Ensinar — Foto 7" />
+        <div class="galeria__inner">
+          <div class="carrossel" data-carousel aria-label="Galeria de fotos do ADN Ensinar">
+            <img src="1 (1).jpg" alt="Espaço ADN Ensinar — Foto 1" class="active" />
+            <img src="1 (3).jpg" alt="Espaço ADN Ensinar — Foto 2" />
+            <img src="1 (5).jpg" alt="Espaço ADN Ensinar — Foto 3" />
+            <img src="1 (6).jpg" alt="Espaço ADN Ensinar — Foto 4" />
+            <img src="1 (7).jpg" alt="Espaço ADN Ensinar — Foto 5" />
+            <img src="1 (8).jpg" alt="Espaço ADN Ensinar — Foto 6" />
+            <img src="1 (9).jpg" alt="Espaço ADN Ensinar — Foto 7" />
 
-          <button class="carrossel-controle anterior" type="button" data-carousel-prev aria-label="Imagem anterior">
-            &#10094;
-          </button>
-          <button class="carrossel-controle seguinte" type="button" data-carousel-next aria-label="Imagem seguinte">
-            &#10095;
-          </button>
+            <button class="carrossel-controle anterior" type="button" data-carousel-prev aria-label="Imagem anterior">
+              &#10094;
+            </button>
+            <button class="carrossel-controle seguinte" type="button" data-carousel-next aria-label="Imagem seguinte">
+              &#10095;
+            </button>
+          </div>
         </div>
       </section>
     </main>
@@ -357,7 +360,7 @@
 
         <nav class="footer__col" aria-label="Links rápidos">
           <h4>Navegação</h4>
-          <a href="#topo">Início</a>
+          <a href="#inicio">Início</a>
           <a href="#sobre">Sobre</a>
           <a href="#servicos">Serviços</a>
           <a href="#testemunhos">Testemunhos</a>

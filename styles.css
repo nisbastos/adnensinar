@@ -220,9 +220,9 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(8px);
+  width: 100%;
+  z-index: 1000;
+  background: #ffffff;
   box-shadow: 0 1px 0 rgba(86, 86, 86, 0.12);
 }
 
@@ -574,7 +574,7 @@ a {
 
 .secao-animacao {
   position: relative;
-  height: 580px;
+  height: 640px;
   overflow: hidden;
   background: var(--c-light);
   text-align: center;
@@ -596,7 +596,10 @@ a {
 
 .blobs {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 1;
   overflow: hidden;
 }
@@ -604,6 +607,7 @@ a {
 .blob {
   position: absolute;
   border-radius: 50%;
+  overflow: hidden;
   opacity: 0.92;
 
   display: flex;
@@ -611,13 +615,14 @@ a {
   justify-content: center;
   text-align: center;
 
-  padding: 18px;
+  padding: 22px;
 
   font-family: var(--font-title);
-  font-size: clamp(12px, 1.4vw, 16px);
-  line-height: 1.15;
+  font-size: 12.5px;
+  line-height: 1.2;
   color: var(--c-light);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.55);
+  word-break: break-word;
 
   animation: float 10s ease-in-out infinite;
 }
@@ -627,13 +632,13 @@ a {
   font-family: var(--font-title);
 }
 
-.blob1 { width: 210px; height: 210px; background: var(--c-blob-green); top: 52%; left: 6%; }
-.blob2 { width: 240px; height: 240px; background: var(--c-blob-yellow); top: 46%; left: 27%; }
-.blob3 { width: 210px; height: 210px; background: var(--c-blob-pink); top: 52%; right: 5%; }
-.blob4 { width: 230px; height: 230px; background: var(--c-dark); bottom: 52%; right: 16%; }
-.blob5 { width: 200px; height: 200px; background: var(--c-brand-1); top: 46%; left: 49%; }
-.blob6 { width: 220px; height: 220px; background: var(--c-blob-pink); bottom: 46%; left: 20%; }
-.blob7 { width: 220px; height: 220px; background: var(--c-blob-green); bottom: 52%; right: 32%; }
+.blob1 { width: 200px; height: 200px; background: var(--c-blob-green); top: 58%; left: 2%; }
+.blob2 { width: 220px; height: 220px; background: var(--c-blob-yellow); top: 40%; left: 20%; }
+.blob3 { width: 240px; height: 240px; background: var(--c-blob-pink); top: 54%; right: 1%; }
+.blob4 { width: 220px; height: 220px; background: var(--c-dark); bottom: 56%; right: 20%; }
+.blob5 { width: 190px; height: 190px; background: var(--c-brand-1); top: 38%; left: 46%; }
+.blob6 { width: 210px; height: 210px; background: var(--c-blob-pink); bottom: 36%; left: 15%; }
+.blob7 { width: 200px; height: 200px; background: var(--c-blob-green); bottom: 50%; right: 40%; }
 
 .deco-blob1 { width: 110px; height: 110px; background: var(--c-blob-green); top: 8%; left: 4%; opacity: 0.4; }
 .deco-blob2 { width: 160px; height: 160px; background: var(--c-blob-pink); top: 25%; right: 12%; opacity: 0.4; }
@@ -808,30 +813,31 @@ a {
    ========================= */
 
 .galeria {
-  padding: 90px 24px 100px;
+  padding: 70px 24px 100px;
   text-align: center;
-}
-
-.galeria .titulo-secao {
-  margin-bottom: 40px;
 }
 
 .carrossel {
   position: relative;
+  display: block;
   width: 100%;
-  max-width: 720px;
-  height: 440px;
+  max-width: 560px;
+  height: 380px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
+  background: var(--c-blob-green-soft);
 }
 
 .carrossel img {
+  display: block;
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  max-width: 100%;
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
@@ -996,7 +1002,10 @@ footer {
 @media (max-width: 860px) {
   .site-nav {
     position: fixed;
-    inset: var(--header-h) 0 auto 0;
+    top: var(--header-h);
+    right: 0;
+    bottom: auto;
+    left: 0;
     flex-direction: column;
     background: var(--c-light);
     padding: 18px 24px 26px;
@@ -1083,20 +1092,16 @@ footer {
     border-radius: 36px 36px 0 0;
   }
 
-  .testemunhos__grid {
-    grid-template-columns: 1fr;
-  }
-
   .contactos {
     padding: 64px 20px;
   }
 
   .galeria {
-    padding: 64px 20px 80px;
+    padding: 48px 20px 70px;
   }
 
   .carrossel {
-    height: 300px;
+    height: 260px;
   }
 
   .contactos__grid {
@@ -1129,5 +1134,37 @@ footer {
   }
   .stat-blob {
     max-width: 160px;
+  }
+
+  .header-inner {
+    padding: 10px 16px;
+    gap: 10px;
+  }
+
+  .logo-badge {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo-tag {
+    display: none;
+  }
+
+  .logo-title {
+    font-size: 17px;
+  }
+
+  .mapa iframe {
+    min-height: 280px;
+  }
+
+  .carrossel {
+    height: 220px;
+    border-radius: 16px;
+  }
+
+  .carrossel-controle {
+    font-size: 18px;
+    padding: 8px 12px;
   }
 }

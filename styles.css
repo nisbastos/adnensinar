@@ -917,6 +917,26 @@ footer {
   margin-right: 4px;
 }
 
+.footer__horario {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: var(--c-light);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.55;
+  opacity: 0.92;
+  margin: 0;
+  padding-left: 22px;
+}
+.footer__horario i {
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  width: 18px;
+  text-align: center;
+}
+
 .footer__marca {
   gap: 6px;
 }

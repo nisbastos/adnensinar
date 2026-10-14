@@ -354,9 +354,22 @@ a {
   margin: 0 0 18px;
 }
 
-.hero h1 {
+/* O h1 é a linha pequena (palavras-chave para o Google); o slogan grande é um parágrafo com o mesmo visual de antes */
+.hero h1.eyebrow {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 2px;
+  margin: 0 0 18px;
+}
+
+.hero__titulo {
+  font-family: var(--font-title);
   font-size: var(--fs-h1);
   font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.3px;
   margin: 0 0 22px;
 }
 

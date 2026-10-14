@@ -917,24 +917,34 @@ footer {
   margin-right: 4px;
 }
 
+/* Horário: mesmo tipo de letra, tamanho, peso, cor e espaçamento que os contactos acima */
 .footer__horario {
   position: relative;
   display: flex;
   flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding-left: 22px;
+}
+.footer__col a,
+.footer__horario span {
+  font-family: var(--font-body);
   color: var(--c-light);
   font-weight: 300;
   font-size: 15px;
-  line-height: 1.55;
+  line-height: normal;
+  letter-spacing: normal;
   opacity: 0.92;
-  margin: 0;
-  padding-left: 22px;
 }
 .footer__horario i {
   position: absolute;
   left: 0;
-  top: 0.3em;
+  top: 0.15em;
   width: 18px;
   text-align: center;
+  color: var(--c-light);
+  opacity: 0.92;
+  font-size: 15px;
 }
 
 .footer__marca {
